@@ -1,0 +1,13 @@
+split_family,modality,Additive,ContextKNN,ContextRidge,CrossModal[PerturbationMean],GlobalMean,LinearEmbedding,NoChange,PerturbationMean
+random,atac,-0.679,0.069,0.285,0.013,-12.257,-3.672,-12.885,0.0
+random,protein,-0.236,0.057,0.24,-0.08,-9.379,-3.251,-9.516,0.0
+random,rna,-0.902,0.07,0.233,0.0,-18.074,-4.603,-18.724,0.0
+unseen_cell_type,atac,-0.056,0.044,0.125,-0.003,-8.697,-2.868,-8.965,0.0
+unseen_cell_type,protein,-0.117,0.032,0.107,-0.111,-7.155,-2.813,-7.227,0.0
+unseen_cell_type,rna,-0.053,0.041,0.063,0.0,-15.446,-4.382,-15.744,0.0
+unseen_donor,atac,-0.877,0.091,0.243,0.007,-11.272,-4.22,-11.611,0.0
+unseen_donor,protein,-0.56,0.07,0.188,-0.071,-8.546,-3.335,-8.644,0.0
+unseen_donor,rna,-1.125,0.094,0.222,0.0,-16.276,-5.902,-16.7,0.0
+unseen_perturbation,atac,0.026,0.0,0.015,-0.0,0.0,0.139,0.1,0.0
+unseen_perturbation,protein,0.003,0.0,0.011,0.0,0.0,0.114,0.12,0.0
+unseen_perturbation,rna,0.019,0.0,0.01,0.0,0.0,0.155,0.068,0.0

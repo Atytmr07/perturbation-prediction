@@ -1,0 +1,7 @@
+split_family,modality,Additive,ContextKNN,ContextRidge,CrossModal[PerturbationMean],GlobalMean,LinearEmbedding,NoChange,PerturbationMean
+random,protein,-0.492,-0.003,-0.003,-0.809,-4.158,-3.465,-1.595,0.0
+random,rna,0.212,-0.0,-0.001,0.0,-4.66,-4.647,-5.927,0.0
+unseen_donor,protein,-0.001,-0.001,-0.001,-0.45,-5.496,-5.122,-4.634,0.0
+unseen_donor,rna,-0.0,-0.001,-0.001,0.0,-7.65,-7.284,-10.594,0.0
+unseen_perturbation,protein,-0.017,0.0,0.001,0.0,0.0,-0.206,0.238,0.0
+unseen_perturbation,rna,0.084,0.0,0.053,0.0,0.0,-0.017,-0.225,0.0

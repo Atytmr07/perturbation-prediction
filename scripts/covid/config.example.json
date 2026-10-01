@@ -1,0 +1,19 @@
+{
+  "files": {
+    "cite": {
+      "rna": "data/covid/PBMC_vaccine_CITE__RNA.h5ad",
+      "adt": "data/covid/PBMC_vaccine_CITE__ADT.h5ad"
+    },
+    "asap": {
+      "atac": "data/covid/PBMC_vaccine_ASAP__peaks.h5ad",
+      "adt": "data/covid/PBMC_vaccine_ASAP__ADT.h5ad"
+    }
+  },
+  "donor_key": "DONOR_SUTUNU",
+  "day_key": "GUN_SUTUNU",
+  "cell_type_key": "HUCRE_TIPI_SUTUNU",
+  "control_day": "0",
+  "min_cells": 10,
+  "n_top": {"rna": 3000, "atac": 20000},
+  "cell_type_map": {}
+}

@@ -1,0 +1,4 @@
+split_family,modality,Additive,ContextKNN,ContextRidge,GlobalMean,NoChange,PerturbationMean
+random,protein,0.101,-0.0,0.002,-0.137,-0.172,0.0
+unseen_cell_type,protein,0.0,-0.0,-0.0,-0.456,-0.426,0.0
+unseen_perturbation,protein,-0.009,0.0,0.018,0.0,-0.07,0.0

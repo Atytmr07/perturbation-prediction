@@ -1,0 +1,12 @@
+.venv/
+data/*.h5ad
+data/*.h5mu
+data/*.part
+results/**/per_condition.csv
+__pycache__/
+.pytest_cache/
+external/
+.venv-models/
+data/**/*.h5ad
+data/**/*.rds
+data/**/*.tsv.gz*
