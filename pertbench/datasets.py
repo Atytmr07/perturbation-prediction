@@ -164,7 +164,8 @@ def covid_vaccine(files: dict, donor_key: str, day_key: str, cell_type_key: str,
             if cell_type_map:
                 ct = ct.map(lambda s: cell_type_map.get(s, s))
             day = o[day_key].astype(str)
-            obs = pd.DataFrame({"perturbation": np.where(day == str(control_day), "control", "day" + day),
+            label = day.where(~day.str.fullmatch(r"\d+"), "day" + day)  # "2" -> "day2", "Day2" stays
+            obs = pd.DataFrame({"perturbation": np.where(day == str(control_day), "control", label),
                                 "cell_type": ct.to_numpy(), "donor": o[donor_key].astype(str).to_numpy()})
             names = np.asarray(a.var_names.astype(str))
             if train_donors is None:

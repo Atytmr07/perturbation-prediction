@@ -1,0 +1,79 @@
+Using CPU!
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Pretraining transcriptome-specific encoder...
+Epoch 1, transcriptome-specific encoder pretraining loss: 2511.7610677083335
+Epoch 2, transcriptome-specific encoder pretraining loss: 2077.593600802951
+Epoch 3, transcriptome-specific encoder pretraining loss: 1747.4991048177085
+Epoch 4, transcriptome-specific encoder pretraining loss: 1624.131659613715
+Epoch 5, transcriptome-specific encoder pretraining loss: 1573.0967203776042
+Epoch 6, transcriptome-specific encoder pretraining loss: 1547.4507514105903
+Epoch 7, transcriptome-specific encoder pretraining loss: 1528.1361219618057
+Epoch 8, transcriptome-specific encoder pretraining loss: 1523.2366672092014
+Epoch 9, transcriptome-specific encoder pretraining loss: 1513.7546115451391
+Epoch 10, transcriptome-specific encoder pretraining loss: 1511.5269232855903
+Pretraining proteome-specific encoder...
+Epoch 1, proteome-specific encoder pretraining loss: 48.495325300428604
+Epoch 2, proteome-specific encoder pretraining loss: 25.91002919938829
+Epoch 3, proteome-specific encoder pretraining loss: 4.310074743297365
+Epoch 4, proteome-specific encoder pretraining loss: 2.3740243117014566
+Epoch 5, proteome-specific encoder pretraining loss: 0.4321250269810359
+Epoch 6, proteome-specific encoder pretraining loss: 0.5208490424686009
+Epoch 7, proteome-specific encoder pretraining loss: 0.09946857185827362
+Epoch 8, proteome-specific encoder pretraining loss: 0.12211930834584768
+Epoch 9, proteome-specific encoder pretraining loss: 0.06224852717585033
+Epoch 10, proteome-specific encoder pretraining loss: 0.05705362558364868
+Pretrained transcriptome-specific and proteome-specific encoders saved.
+Integrated Training:
+2026-10-02 23:32:04 - Epoch 10, Train Loss: 46.54587173461914, Val Loss: 45.853440602620445
+2026-10-02 23:32:43 - Epoch 20, Train Loss: 36.56984625922309, Val Loss: 35.87208557128906
+2026-10-02 23:33:25 - Epoch 30, Train Loss: 28.89695824517144, Val Loss: 28.27398681640625
+2026-10-02 23:34:06 - Epoch 40, Train Loss: 21.94833501180013, Val Loss: 21.557763417561848
+2026-10-02 23:34:44 - Epoch 50, Train Loss: 16.939075258043076, Val Loss: 16.67881457010905
+2026-10-02 23:35:25 - Epoch 60, Train Loss: 13.069371011522081, Val Loss: 12.843920707702637
+2026-10-02 23:36:10 - Epoch 70, Train Loss: 9.994346406724718, Val Loss: 9.811860084533691
+2026-10-02 23:36:58 - Epoch 80, Train Loss: 7.949243174658881, Val Loss: 7.879984537760417
+2026-10-02 23:37:46 - Epoch 90, Train Loss: 5.87102476755778, Val Loss: 5.7539262771606445
+2026-10-02 23:38:32 - Epoch 100, Train Loss: 4.396964285108778, Val Loss: 4.323487917582194
+2026-10-02 23:39:19 - Epoch 110, Train Loss: 3.493889808654785, Val Loss: 3.463423252105713
+2026-10-02 23:40:04 - Epoch 120, Train Loss: 3.0572508176167807, Val Loss: 3.0233330726623535
+2026-10-02 23:40:46 - Epoch 130, Train Loss: 2.814419560962253, Val Loss: 2.791877110799154
+2026-10-02 23:41:24 - Epoch 140, Train Loss: 2.8135088284810386, Val Loss: 2.7916297117869058
+2026-10-02 23:42:07 - Epoch 150, Train Loss: 2.6643696096208362, Val Loss: 2.6479479471842446
+2026-10-02 23:42:50 - Epoch 160, Train Loss: 2.695915699005127, Val Loss: 2.679053703943888
+2026-10-02 23:43:26 - Epoch 170, Train Loss: 2.8059648937649198, Val Loss: 2.780992110570272
+Early stopping at epoch 172
+Best model saved.
+Last model saved.
+Test data saved to C:\Projects\master\pertubation-prediction\results\multipert_original
+Prediction data saved to C:\Projects\master\pertubation-prediction\results\multipert_original
+Metrics saved to C:\Projects\master\pertubation-prediction\results\multipert_original/metrics_rna.csv
+Metrics saved to C:\Projects\master\pertubation-prediction\results\multipert_original/metrics_adt.csv
+[multipert] bitti: 13.2 dk -> C:\Projects\master\pertubation-prediction\results\multipert_original
+EXIT 0

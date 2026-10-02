@@ -1,0 +1,17 @@
+split_family,modality,model,pearson_delta,pearson_delta_top20,mse_top20,direction_acc_top20
+unseen_donor,adt,Additive,0.081,0.163,0.079,0.548
+unseen_donor,adt,ContextKNN,0.015,0.057,0.086,0.499
+unseen_donor,adt,ContextRidge,0.049,0.141,0.08,0.543
+unseen_donor,adt,CrossModal[PerturbationMean],0.085,0.169,0.079,0.543
+unseen_donor,adt,GlobalMean,0.005,0.088,0.081,0.502
+unseen_donor,adt,LinearEmbedding,0.005,0.088,0.081,0.502
+unseen_donor,adt,NoChange,,,0.079,0.0
+unseen_donor,adt,PerturbationMean,0.096,0.168,0.08,0.543
+unseen_donor,rna,Additive,0.24,0.365,0.222,0.709
+unseen_donor,rna,ContextKNN,0.224,0.333,0.222,0.683
+unseen_donor,rna,ContextRidge,0.224,0.358,0.227,0.682
+unseen_donor,rna,CrossModal[PerturbationMean],0.25,0.37,0.218,0.708
+unseen_donor,rna,GlobalMean,0.185,0.332,0.239,0.704
+unseen_donor,rna,LinearEmbedding,0.185,0.332,0.239,0.704
+unseen_donor,rna,NoChange,,,0.255,0.0
+unseen_donor,rna,PerturbationMean,0.25,0.37,0.218,0.708

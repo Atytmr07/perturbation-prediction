@@ -1,0 +1,171 @@
+[2026-10-02 23:43:23,540][INFO] Reading data/covid/PBMC_vaccine_ASAP.rds
+[2026-10-02 23:51:02,932][INFO] Done reading data/covid/PBMC_vaccine_ASAP.rds
+{
+  "file": "data/covid/PBMC_vaccine_ASAP.rds",
+  "object_slots": [
+    "sexptype",
+    "sexptype"
+  ],
+  "assays": {
+    "ATAC": {
+      "slots": [
+        "sexptype",
+        "sexptype"
+      ],
+      "counts": [
+        118137,
+        78677
+      ],
+      "data": [
+        118137,
+        78677
+      ]
+    },
+    "ADT": {
+      "slots": [
+        "sexptype",
+        "sexptype"
+      ],
+      "scale.data": [
+        175,
+        78677
+      ]
+    }
+  },
+  "reductions": [
+    "ref.umap"
+  ],
+  "n_cells": 78677,
+  "meta": {
+    "orig.ident": {
+      "dtype": "object",
+      "n_unique": 1,
+      "examples": [
+        "SeuratProject"
+      ]
+    },
+    "nCount_ATAC": {
+      "dtype": "float64",
+      "n_unique": 14006,
+      "examples": []
+    },
+    "nFeature_ATAC": {
+      "dtype": "Int32",
+      "n_unique": 9756,
+      "examples": []
+    },
+    "total": {
+      "dtype": "Int32",
+      "n_unique": 34701,
+      "examples": []
+    },
+    "peak_region_fragments": {
+      "dtype": "Int32",
+      "n_unique": 14213,
+      "examples": []
+    },
+    "nCount_ADT": {
+      "dtype": "float64",
+      "n_unique": 1447,
+      "examples": []
+    },
+    "nFeature_ADT": {
+      "dtype": "Int32",
+      "n_unique": 119,
+      "examples": [
+        "104",
+        "103",
+        "107",
+        "108",
+        "105",
+        "109",
+        "102",
+        "106",
+        "112",
+        "110",
+        "101",
+        "111"
+      ]
+    },
+    "timepoint": {
+      "dtype": "object",
+      "n_unique": 4,
+      "examples": [
+        "Day11",
+        "Day2",
+        "Day0",
+        "Day28"
+      ]
+    },
+    "donor": {
+      "dtype": "object",
+      "n_unique": 6,
+      "examples": [
+        "donorA",
+        "donorE",
+        "donorF",
+        "donorB",
+        "donorM",
+        "donorJ"
+      ]
+    },
+    "predicted.CITE_l1": {
+      "dtype": "object",
+      "n_unique": 8,
+      "examples": [
+        "CD4 T",
+        "CD8 T",
+        "Mono",
+        "NK",
+        "B",
+        "Other T",
+        "DC",
+        "Other"
+      ]
+    },
+    "predicted.CITE_l3": {
+      "dtype": "object",
+      "n_unique": 39,
+      "examples": [
+        "CD4 Naive",
+        "CD8 Naive",
+        "CD14 Mono",
+        "NK_0",
+        "B Naive",
+        "CD8 TEM_0",
+        "CD4 TCM_1",
+        "Treg",
+        "CD4 TCM_2",
+        "MAIT",
+        "B Intermediate",
+        "NK_1"
+      ]
+    },
+    "predicted.CITE_l2": {
+      "dtype": "object",
+      "n_unique": 26,
+      "examples": [
+        "CD4 Naive",
+        "CD8 Naive",
+        "CD14 Mono",
+        "NK",
+        "CD8 TEM",
+        "CD4 TCM",
+        "B Naive",
+        "Treg",
+        "MAIT",
+        "B Intermediate",
+        "B Memory",
+        "CD16 Mono"
+      ]
+    },
+    "GA_antigen_score": {
+      "dtype": "float64",
+      "n_unique": 78677,
+      "examples": []
+    }
+  }
+}
+
+-> data\covid\PBMC_vaccine_ASAP.inspect.json
+EXIT 0

@@ -1,0 +1,15 @@
+[2026-10-02 23:35:32,345][INFO] Reading data/covid/PBMC_vaccine_CITE.rds
+[2026-10-02 23:37:19,433][INFO] Done reading data/covid/PBMC_vaccine_CITE.rds
+... storing 'timepoint' as categorical
+... storing 'donor' as categorical
+... storing 'celltypel1' as categorical
+... storing 'celltypel2' as categorical
+... storing 'celltypel3' as categorical
+... storing 'timepoint' as categorical
+... storing 'donor' as categorical
+... storing 'celltypel1' as categorical
+... storing 'celltypel2' as categorical
+... storing 'celltypel3' as categorical
+RNA: 113897 hücre x 16825 özellik -> data\covid\PBMC_vaccine_CITE__RNA.h5ad
+ADT: 113897 hücre x 175 özellik -> data\covid\PBMC_vaccine_CITE__ADT.h5ad
+EXIT 0

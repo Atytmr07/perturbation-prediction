@@ -145,3 +145,17 @@ def test_covid_lodo_runs(tmp_path):
     ct = covid_vaccine(**_fake_covid(tmp_path))
     df = evaluate_split(default_models(ct.modalities)[2], ct, unseen_context(ct, "donor", "D3"))
     assert set(df["donor"]) == {"D3"} and not df["mse"].isna().any()
+
+
+def test_distribution_metrics_detect_shift():
+    from pertbench.metrics import distribution_metrics
+    rng = np.random.default_rng(0)
+    a, b = rng.normal(size=(400, 10)), rng.normal(size=(400, 10))
+    near = distribution_metrics(a, b)
+    small = distribution_metrics(a, b + 0.3)
+    big = distribution_metrics(a, b + 1.0)
+    for k in ("mmd", "energy"):
+        assert abs(near[k]) < small[k] < big[k], k
+    # same mean, different spread: invisible to pseudobulk metrics, visible here
+    wide = distribution_metrics(a, b * 2.0)
+    assert wide["energy"] > small["energy"] * 0.5 and wide["mmd"] > near["mmd"]

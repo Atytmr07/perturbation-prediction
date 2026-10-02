@@ -1,0 +1,173 @@
+[2026-10-02 23:33:15,195][INFO] Reading data/covid/PBMC_vaccine_CITE.rds
+[2026-10-02 23:34:53,784][INFO] Done reading data/covid/PBMC_vaccine_CITE.rds
+{
+  "file": "data/covid/PBMC_vaccine_CITE.rds",
+  "object_slots": [
+    "sexptype",
+    "sexptype"
+  ],
+  "assays": {
+    "RNA": {
+      "slots": [
+        "sexptype",
+        "sexptype"
+      ],
+      "counts": [
+        16825,
+        113897
+      ],
+      "data": [
+        16825,
+        113897
+      ]
+    },
+    "ADT": {
+      "slots": [
+        "sexptype",
+        "sexptype"
+      ],
+      "counts": [
+        175,
+        113897
+      ]
+    },
+    "SCT": {
+      "slots": [
+        "sexptype",
+        "sexptype"
+      ],
+      "counts": [
+        14735,
+        113897
+      ],
+      "data": [
+        14735,
+        113897
+      ]
+    }
+  },
+  "reductions": [
+    "wnn.umap",
+    "spca",
+    "integrated.rna.pca",
+    "integrated.adt.pca",
+    "rna_umap",
+    "adt_umap"
+  ],
+  "n_cells": 113897,
+  "meta": {
+    "nCount_RNA": {
+      "dtype": "float64",
+      "n_unique": 11427,
+      "examples": []
+    },
+    "nFeature_RNA": {
+      "dtype": "Int32",
+      "n_unique": 3411,
+      "examples": []
+    },
+    "nCount_ADT": {
+      "dtype": "float64",
+      "n_unique": 3582,
+      "examples": []
+    },
+    "nFeature_ADT": {
+      "dtype": "Int32",
+      "n_unique": 78,
+      "examples": [
+        "141",
+        "139",
+        "140",
+        "142",
+        "143",
+        "145",
+        "144",
+        "138",
+        "137",
+        "136",
+        "147",
+        "146"
+      ]
+    },
+    "timepoint": {
+      "dtype": "object",
+      "n_unique": 4,
+      "examples": [
+        "Day11",
+        "Day2",
+        "Day0",
+        "Day28"
+      ]
+    },
+    "donor": {
+      "dtype": "object",
+      "n_unique": 6,
+      "examples": [
+        "donorA",
+        "donorM",
+        "donorJ",
+        "donorE",
+        "donorB",
+        "donorF"
+      ]
+    },
+    "celltypel1": {
+      "dtype": "object",
+      "n_unique": 8,
+      "examples": [
+        "CD4 T",
+        "Mono",
+        "CD8 T",
+        "NK",
+        "B",
+        "Other T",
+        "DC",
+        "Other"
+      ]
+    },
+    "celltypel2": {
+      "dtype": "object",
+      "n_unique": 30,
+      "examples": [
+        "CD14 Mono",
+        "CD4 Naive",
+        "NK",
+        "CD8 Naive",
+        "CD8 TEM",
+        "CD4 TCM",
+        "B Naive",
+        "gdT",
+        "B Memory",
+        "CD16 Mono",
+        "MAIT",
+        "CD4 CTL"
+      ]
+    },
+    "celltypel3": {
+      "dtype": "object",
+      "n_unique": 47,
+      "examples": [
+        "CD14 Mono",
+        "CD4 Naive",
+        "CD8 Naive",
+        "NK_0",
+        "B Naive",
+        "NK_1",
+        "CD8 TEM_0",
+        "CD4 TCM_1",
+        "B Memory",
+        "gdT_0",
+        "CD16 Mono",
+        "MAIT"
+      ]
+    },
+    "antigen_module_score": {
+      "dtype": "float64",
+      "n_unique": 113897,
+      "examples": []
+    }
+  }
+}
+
+-> data\covid\PBMC_vaccine_CITE.inspect.json
+EXIT 0

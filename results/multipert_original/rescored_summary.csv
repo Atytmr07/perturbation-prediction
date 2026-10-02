@@ -1,0 +1,9 @@
+modality,model,paper_pcc,pearson,pearson_delta,pearson_delta_top20,mse_top20,direction_acc_top20,mmd,energy
+adt,LeaveOutMean,,0.982,0.47,0.47,0.005,0.694,,
+adt,MultiPert,0.767,0.982,0.556,0.556,0.005,0.667,1.378,0.284
+adt,NoChange,,0.973,,,0.006,0.0,0.079,0.035
+adt,PerturbationMean,,0.997,0.953,0.953,0.001,0.861,0.0,0.0
+rna,LeaveOutMean,,0.987,0.617,0.818,0.264,0.939,,
+rna,MultiPert,0.774,0.996,0.835,0.981,0.011,1.0,1.172,5.067
+rna,NoChange,,0.982,,,0.418,0.0,0.176,1.593
+rna,PerturbationMean,,0.997,0.861,0.983,0.007,1.0,-0.001,-0.018

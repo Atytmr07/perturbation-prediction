@@ -1,0 +1,14 @@
+{
+  "files": {
+    "cite": {
+      "rna": "data/covid/PBMC_vaccine_CITE__RNA.h5ad",
+      "adt": "data/covid/PBMC_vaccine_CITE__ADT.h5ad"
+    }
+  },
+  "donor_key": "donor",
+  "day_key": "timepoint",
+  "cell_type_key": "celltypel1",
+  "control_day": "Day0",
+  "min_cells": 10,
+  "n_top": {"rna": 3000}
+}

@@ -1,0 +1,49 @@
+[covid] 192 koşul | donörler ['donorA', 'donorB', 'donorE', 'donorF', 'donorJ', 'donorM'] | modaliteler rna:3000, adt:175
+              count   min    50%
+perturbation                    
+Day11          48.0  13.0  443.5
+Day2           48.0  15.0  409.0
+Day28          48.0  16.0  403.5
+control        48.0  12.0  387.0
+[covid] fold donör=donorA bitti
+[covid] fold donör=donorB bitti
+[covid] fold donör=donorE bitti
+[covid] fold donör=donorF bitti
+[covid] fold donör=donorJ bitti
+[covid] fold donör=donorM bitti
+split_family modality                        model  pearson_delta  pearson_delta_top20  mse_top20  direction_acc_top20
+unseen_donor      adt                     Additive          0.081                0.163      0.079                0.548
+unseen_donor      adt                   ContextKNN          0.015                0.057      0.086                0.499
+unseen_donor      adt                 ContextRidge          0.049                0.141      0.080                0.543
+unseen_donor      adt CrossModal[PerturbationMean]          0.085                0.169      0.079                0.543
+unseen_donor      adt                   GlobalMean          0.005                0.088      0.081                0.502
+unseen_donor      adt              LinearEmbedding          0.005                0.088      0.081                0.502
+unseen_donor      adt                     NoChange            NaN                  NaN      0.079                0.000
+unseen_donor      adt             PerturbationMean          0.096                0.168      0.080                0.543
+unseen_donor      rna                     Additive          0.240                0.365      0.222                0.709
+unseen_donor      rna                   ContextKNN          0.224                0.333      0.222                0.683
+unseen_donor      rna                 ContextRidge          0.224                0.358      0.227                0.682
+unseen_donor      rna CrossModal[PerturbationMean]          0.250                0.370      0.218                0.708
+unseen_donor      rna                   GlobalMean          0.185                0.332      0.239                0.704
+unseen_donor      rna              LinearEmbedding          0.185                0.332      0.239                0.704
+unseen_donor      rna                     NoChange            NaN                  NaN      0.255                0.000
+unseen_donor      rna             PerturbationMean          0.250                0.370      0.218                0.708
+
+Gün bazında top-20 MSE:
+ model                  Additive  ContextKNN  ContextRidge  CrossModal[PerturbationMean]  GlobalMean  LinearEmbedding  NoChange  PerturbationMean
+modality perturbation                                                                                                                           
+adt      Day11           0.0607      0.0609        0.0561                        0.0601      0.0595           0.0595    0.0590            0.0603
+         Day2            0.0909      0.1014        0.0959                        0.0876      0.0917           0.0917    0.0888            0.0901
+         Day28           0.0862      0.0969        0.0875                        0.0892      0.0906           0.0906    0.0907            0.0895
+rna      Day11           0.1599      0.1558        0.1527                        0.1526      0.1805           0.1805    0.2030            0.1526
+         Day2            0.1726      0.1649        0.1766                        0.1605      0.2041           0.2041    0.2178            0.1605
+         Day28           0.3341      0.3458        0.3522                        0.3404      0.3331           0.3331    0.3440            0.3404
+
+PerturbationMean'e göre skill (>0 daha iyi):
+ model                  Additive  ContextKNN  ContextRidge  CrossModal[PerturbationMean]  GlobalMean  LinearEmbedding  NoChange  PerturbationMean
+split_family modality                                                                                                                           
+unseen_donor adt         -0.018      -0.104        -0.041                         0.012      -0.062           -0.062    -0.066               0.0
+             rna         -0.060      -0.033        -0.133                         0.000      -0.324           -0.324    -0.534               0.0
+
+-> results\covid_lodo_cite_l1
+EXIT 0

@@ -10,3 +10,6 @@ external/
 data/**/*.h5ad
 data/**/*.rds
 data/**/*.tsv.gz*
+.venv-models/
+results/multipert_original/*.h5ad
+results/multipert_original/*.pth
