@@ -131,7 +131,11 @@ Baseline hücreleri (donör D, gün 0): CITE (RNA+ADT) + ASAP (ATAC+ADT)
 | Alperen | Donör temsili literatürü (CellFlow, MultiCPA, CPA/biolord, scGen/scPILOT) + eşleşmesiz perturbation öğrenme (MMD/OT/flow) |
 | Bengisu | Entegrasyon benchmark'ı (Fu vd.) + yöntem kartları (MIDAS, MultiVI, totalVI) + COVID veri yapısı |
 
-## 12. 2 haftalık sprint (aktif plan)
+## 12. Plan
+
+> **Güncel plan (5 Ekim): `docs/11_ortak_roadmap.md`.** Herkes farklı bir yaklaşım dener: A = MultiPert'in COVID uyarlaması, B = MultiVI, C = MIDAS/totalVI, 0 = altyapı. Hepsi aynı LODO protokolüyle `results/LEADERBOARD.md`'ye yazılır; en iyi sonucun üzerine eklenir. Aşağıdaki sprint planı arşivdir. Zaman noktaları: gün 0/2/**11**/28.
+
+### (Arşiv) 2 haftalık sprint
 
 **Kapsam:** Sadece hocanın 4 isteği: MultiPert'i anla, entegrasyonla geliştir, COVID verisi, görülmemiş donör. Nöroblastom, AML, genotip ve makale sprint dışında.
 
