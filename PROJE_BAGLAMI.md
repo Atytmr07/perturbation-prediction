@@ -49,7 +49,7 @@
 | | **COVID aşı** (başlangıç verisi) | **Nöroblastom** (ana hedef, sonra) | **Pediatrik AML** (opsiyonel) |
 |---|---|---|---|
 | Makale | Zhang vd., *Nat Immunol* 2023: "Multimodal single-cell datasets characterize antigen-specific CD8+ T cells across SARS-CoV-2 vaccination and infection" | Yu (Wenbao) vd., *Nat Genet* 2025: "Longitudinal single-cell multiomic atlas of high-risk neuroblastoma…" | Lambo vd., *Cancer Cell* 2023: "A longitudinal single-cell atlas of treatment response in pediatric AML" |
-| "Perturbation" | BNT162b2 aşısı: gün 0 → 2, 10, 28 | İndüksiyon kemoterapisi (3–4 kür): tanı biyopsisi → cerrahi rezeksiyon | Tedavi: tanı → remisyon / nüks |
+| "Perturbation" | BNT162b2 aşısı: gün 0 → 2, 11, 28 | İndüksiyon kemoterapisi (3–4 kür): tanı biyopsisi → cerrahi rezeksiyon | Tedavi: tanı → remisyon / nüks |
 | Donör | **6** sağlıklı donör | **22** hasta (öncesi/sonrası eşli) | **28** hasta |
 | RNA | CITE-seq (RNA + ADT), ~114 bin hücre, 24 örnek | snRNA-seq, 22 eşli, ~373 bin çekirdek | scRNA-seq, ~330 bin hücre |
 | ATAC | ASAP-seq (ATAC + ADT), aynı 24 örneğin **farklı aliquot'ları** | snATAC-seq, 13 eşli + 7 eşsiz, ~144 bin çekirdek | scATAC-seq, ~354 bin hücre |
