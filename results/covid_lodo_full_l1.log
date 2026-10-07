@@ -1,0 +1,97 @@
+[covid] 176 koşul | donörler ['donorA', 'donorB', 'donorE', 'donorF', 'donorJ', 'donorM'] | modaliteler rna:3000, cite_adt:175, atac:20000, asap_adt:175
+              count   min    50%
+perturbation                    
+Day11          46.0  10.0  287.5
+Day2           43.0  14.0  267.0
+Day28          43.0  10.0  295.0
+control        44.0  11.0  275.5
+[covid] fold donör=donorA bitti
+[covid] fold donör=donorB bitti
+[covid] fold donör=donorE bitti
+[pertbench] unseen_donor=donorF: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorF: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorF: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorF: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorF: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorF: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorF: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorF: 1 test koşulu kontrolsüz olduğu için atlandı
+[covid] fold donör=donorF bitti
+[pertbench] unseen_donor=donorJ: 2 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorJ: 2 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorJ: 2 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorJ: 2 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorJ: 2 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorJ: 2 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorJ: 2 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorJ: 2 test koşulu kontrolsüz olduğu için atlandı
+[covid] fold donör=donorJ bitti
+[pertbench] unseen_donor=donorM: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorM: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorM: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorM: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorM: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorM: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorM: 1 test koşulu kontrolsüz olduğu için atlandı
+[pertbench] unseen_donor=donorM: 1 test koşulu kontrolsüz olduğu için atlandı
+[covid] fold donör=donorM bitti
+split_family modality                        model  pearson_delta  pearson_delta_top20  mse_top20  direction_acc_top20
+unseen_donor asap_adt                     Additive          0.110                0.206      0.031                0.572
+unseen_donor asap_adt                   ContextKNN          0.089                0.169      0.032                0.570
+unseen_donor asap_adt                 ContextRidge          0.109                0.202      0.031                0.583
+unseen_donor asap_adt CrossModal[PerturbationMean]          0.121                0.219      0.030                0.583
+unseen_donor asap_adt                   GlobalMean          0.094                0.195      0.032                0.580
+unseen_donor asap_adt              LinearEmbedding          0.095                0.195      0.032                0.578
+unseen_donor asap_adt                     NoChange            NaN                  NaN      0.033                0.000
+unseen_donor asap_adt             PerturbationMean          0.107                0.194      0.031                0.576
+unseen_donor     atac                     Additive          0.016                0.030      0.071                0.527
+unseen_donor     atac                   ContextKNN          0.019                0.052      0.071                0.531
+unseen_donor     atac                 ContextRidge          0.021                0.042      0.070                0.524
+unseen_donor     atac CrossModal[PerturbationMean]          0.024                0.058      0.070                0.531
+unseen_donor     atac                   GlobalMean          0.012                0.039      0.070                0.511
+unseen_donor     atac              LinearEmbedding          0.012                0.039      0.070                0.511
+unseen_donor     atac                     NoChange            NaN                  NaN      0.071                0.000
+unseen_donor     atac             PerturbationMean          0.020                0.055      0.071                0.525
+unseen_donor cite_adt                     Additive          0.087                0.176      0.058                0.537
+unseen_donor cite_adt                   ContextKNN          0.023                0.071      0.065                0.504
+unseen_donor cite_adt                 ContextRidge          0.077                0.172      0.059                0.559
+unseen_donor cite_adt CrossModal[PerturbationMean]          0.090                0.178      0.058                0.550
+unseen_donor cite_adt                   GlobalMean         -0.011                0.085      0.061                0.479
+unseen_donor cite_adt              LinearEmbedding         -0.011                0.084      0.061                0.479
+unseen_donor cite_adt                     NoChange            NaN                  NaN      0.059                0.000
+unseen_donor cite_adt             PerturbationMean          0.103                0.178      0.059                0.551
+unseen_donor      rna                     Additive          0.272                0.402      0.168                0.730
+unseen_donor      rna                   ContextKNN          0.226                0.341      0.178                0.680
+unseen_donor      rna                 ContextRidge          0.287                0.392      0.174                0.720
+unseen_donor      rna CrossModal[PerturbationMean]          0.278                0.402      0.165                0.718
+unseen_donor      rna                   GlobalMean          0.225                0.353      0.185                0.740
+unseen_donor      rna              LinearEmbedding          0.225                0.354      0.185                0.740
+unseen_donor      rna                     NoChange            NaN                  NaN      0.203                0.000
+unseen_donor      rna             PerturbationMean          0.278                0.402      0.165                0.718
+
+Gün bazında top-20 MSE:
+ model                  Additive  ContextKNN  ContextRidge  CrossModal[PerturbationMean]  GlobalMean  LinearEmbedding  NoChange  PerturbationMean
+modality perturbation                                                                                                                           
+asap_adt Day11           0.0223      0.0225        0.0225                        0.0223      0.0225           0.0225    0.0228            0.0226
+         Day2            0.0317      0.0318        0.0326                        0.0299      0.0360           0.0360    0.0373            0.0301
+         Day28           0.0381      0.0405        0.0376                        0.0387      0.0372           0.0372    0.0383            0.0396
+atac     Day11           0.0664      0.0662        0.0664                        0.0662      0.0663           0.0663    0.0665            0.0667
+         Day2            0.0717      0.0708        0.0709                        0.0706      0.0707           0.0707    0.0707            0.0709
+         Day28           0.0747      0.0768        0.0741                        0.0746      0.0740           0.0740    0.0744            0.0755
+cite_adt Day11           0.0354      0.0348        0.0354                        0.0348      0.0382           0.0382    0.0375            0.0349
+         Day2            0.0708      0.0813        0.0725                        0.0681      0.0707           0.0707    0.0676            0.0706
+         Day28           0.0693      0.0807        0.0702                        0.0721      0.0728           0.0729    0.0724            0.0724
+rna      Day11           0.1012      0.1011        0.1069                        0.0959      0.1303           0.1303    0.1573            0.0959
+         Day2            0.1297      0.1268        0.1298                        0.1221      0.1497           0.1495    0.1616            0.1221
+         Day28           0.2725      0.3063        0.2840                        0.2749      0.2749           0.2748    0.2894            0.2749
+
+PerturbationMean'e göre skill (>0 daha iyi):
+ model                  Additive  ContextKNN  ContextRidge  CrossModal[PerturbationMean]  GlobalMean  LinearEmbedding  NoChange  PerturbationMean
+split_family modality                                                                                                                           
+unseen_donor asap_adt    -0.016      -0.043        -0.015                         0.015      -0.073           -0.073    -0.121               0.0
+             atac        -0.003      -0.003        -0.005                         0.004      -0.014           -0.014    -0.018               0.0
+             cite_adt    -0.016      -0.115        -0.010                         0.013      -0.071           -0.071    -0.070               0.0
+             rna         -0.058      -0.088        -0.107                         0.000      -0.329           -0.329    -0.573               0.0
+
+-> results\covid_lodo_full_l1
+EXIT 0

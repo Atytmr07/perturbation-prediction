@@ -159,3 +159,32 @@ def test_distribution_metrics_detect_shift():
     # same mean, different spread: invisible to pseudobulk metrics, visible here
     wide = distribution_metrics(a, b * 2.0)
     assert wide["energy"] > small["energy"] * 0.5 and wide["mmd"] > near["mmd"]
+
+
+def test_covid_loader_per_table_keys_and_norm(tmp_path):
+    """ASAP names the cell type column differently and ships pre-scaled ADT."""
+    import anndata as ad
+    from pertbench.datasets import covid_vaccine
+    cfg = _fake_covid(tmp_path)
+    for m, p in cfg["files"]["asap"].items():
+        a = ad.read_h5ad(p)
+        a.obs = a.obs.rename(columns={"celltype": "predicted_l1"})
+        if m == "adt":  # dense, centred values like Seurat scale.data
+            x = a.X.toarray()
+            a.X = (x - x.mean(0)) / (x.std(0) + 1e-6)
+        a.write_h5ad(p)
+    cfg["cell_type_key"] = {"cite": "celltype", "asap": "predicted_l1"}
+    ct = covid_vaccine(norm={"asap_adt": "none"}, **cfg)
+    assert set(ct.modalities) == {"rna", "cite_adt", "atac", "asap_adt"}
+    assert len(ct.obs) == 6 * 4 * 3
+    # "none" keeps the scaled values: pseudobulk means of z-scores stay near 0
+    assert abs(ct.means["asap_adt"].mean()) < 0.5
+
+
+def test_evaluate_skips_conditions_without_control(ct):
+    from pertbench.models import PerturbationMean
+    # drop one context's control: its perturbed conditions must be skipped, not crash
+    drop = ct.is_control() & (ct.obs["cell_type"] == "ct0").to_numpy() & (ct.obs["donor"] == "donor1").to_numpy()
+    sub = ct.subset(~drop)
+    df = evaluate_split(PerturbationMean(), sub, unseen_context(sub, "donor", "donor1"))
+    assert len(df) and "ct0" not in set(df["cell_type"])

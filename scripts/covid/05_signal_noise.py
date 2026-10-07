@@ -46,6 +46,7 @@ def main():
     rng = np.random.default_rng(0)
     rows = []
     for tname, mods in cfg["files"].items():
+        ct_key = cfg["cell_type_key"][tname] if isinstance(cfg["cell_type_key"], dict) else cfg["cell_type_key"]
         for m, path in mods.items():
             x = ad.read_h5ad(path)
             o = x.obs
@@ -54,7 +55,7 @@ def main():
             day = o[cfg["day_key"]].astype(str).to_numpy()
             obs = pd.DataFrame({
                 "perturbation": day,
-                "cell_type": o[cfg["cell_type_key"]].astype(str).to_numpy(),
+                "cell_type": o[ct_key].astype(str).to_numpy(),
                 # donor|half for split-half, donor|all for the full estimate
                 "donor": o[cfg["donor_key"]].astype(str).to_numpy(),
             })

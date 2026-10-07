@@ -135,10 +135,10 @@ def _sparse_norm_select(X, kind: str, n_top: int | None):
     return X, keep
 
 
-def covid_vaccine(files: dict, donor_key: str, day_key: str, cell_type_key: str, control_day: str,
+def covid_vaccine(files: dict, donor_key: str, day_key: str, cell_type_key: str | dict, control_day: str,
                   norm: dict | None = None, n_top: dict | None = None, min_cells: int = 10,
                   cell_type_map: dict | None = None, train_donors: list[str] | None = None):
-    """Zhang et al. 2023 (Nat Immunol) COVID vaccination: 6 donors x day 0/2/10/28,
+    """Zhang et al. 2023 (Nat Immunol) COVID vaccination: 6 donors x day 0/2/11/28,
     CITE-seq (RNA+ADT) and ASAP-seq (ATAC+ADT) on different aliquots of the same samples.
 
     files: {table: {modality: h5ad path}}, e.g.
@@ -149,6 +149,10 @@ def covid_vaccine(files: dict, donor_key: str, day_key: str, cell_type_key: str,
 
     train_donors: if given, feature selection (top-variance features) uses only these donors' cells,
     so the held-out donor does not leak into preprocessing.
+    cell_type_key: one column name, or {table: column} when the assays name it differently
+        (CITE "celltypel1" vs ASAP "predicted.CITE_l1").
+    norm / n_top: keyed by modality ("adt") or, to override one table, "<table>_<modality>"
+        (e.g. {"asap_adt": "none"} because ASAP only ships scaled ADT values).
     """
     import anndata as ad
     from pertbench.data import ConditionTable, merge_tables, pseudobulk_sparse
@@ -157,10 +161,13 @@ def covid_vaccine(files: dict, donor_key: str, day_key: str, cell_type_key: str,
     tables = {}
     for tname, mods in files.items():
         means, var, obs0 = {}, {}, None
+        ct_key = cell_type_key[tname] if isinstance(cell_type_key, dict) else cell_type_key
         for m, path in mods.items():
+            kind = norm.get(f"{tname}_{m}", norm[m])
+            top = n_top.get(f"{tname}_{m}", n_top.get(m))
             a = ad.read_h5ad(path)
             o = a.obs
-            ct = o[cell_type_key].astype(str)
+            ct = o[ct_key].astype(str)
             if cell_type_map:
                 ct = ct.map(lambda s: cell_type_map.get(s, s))
             day = o[day_key].astype(str)
@@ -169,11 +176,11 @@ def covid_vaccine(files: dict, donor_key: str, day_key: str, cell_type_key: str,
                                 "cell_type": ct.to_numpy(), "donor": o[donor_key].astype(str).to_numpy()})
             names = np.asarray(a.var_names.astype(str))
             if train_donors is None:
-                X, keep = _sparse_norm_select(a.X, norm[m], n_top.get(m))
+                X, keep = _sparse_norm_select(a.X, kind, top)
             else:  # pick features on training donors only, then apply to everyone
                 in_train = obs["donor"].isin(train_donors).to_numpy()
-                _, keep = _sparse_norm_select(a.X[in_train], norm[m], n_top.get(m))
-                X, _ = _sparse_norm_select(a.X, norm[m], None)
+                _, keep = _sparse_norm_select(a.X[in_train], kind, top)
+                X, _ = _sparse_norm_select(a.X, kind, None)
                 if keep is not None:
                     X = X[:, keep]
             names = names[keep] if keep is not None else names

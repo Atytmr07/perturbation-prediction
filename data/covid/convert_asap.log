@@ -1,0 +1,18 @@
+[2026-10-07 19:06:39,861][INFO] Reading data/covid/PBMC_vaccine_ASAP.rds
+[2026-10-07 19:12:50,711][INFO] Done reading data/covid/PBMC_vaccine_ASAP.rds
+[2026-10-07 19:12:51,936][WARNING] seurat2adata(ADT, scale.data) failed ('str' object has no attribute 'get'); reading matrix + meta.data directly
+... storing 'orig.ident' as categorical
+... storing 'timepoint' as categorical
+... storing 'donor' as categorical
+... storing 'predicted.CITE_l1' as categorical
+... storing 'predicted.CITE_l3' as categorical
+... storing 'predicted.CITE_l2' as categorical
+ADT [scale.data]: 78677 hücre x 175 özellik -> data\covid\PBMC_vaccine_ASAP__ADT.h5ad
+... storing 'orig.ident' as categorical
+... storing 'timepoint' as categorical
+... storing 'donor' as categorical
+... storing 'predicted.CITE_l1' as categorical
+... storing 'predicted.CITE_l3' as categorical
+... storing 'predicted.CITE_l2' as categorical
+ATAC [counts]: 78677 hücre x 118137 özellik -> data\covid\PBMC_vaccine_ASAP__ATAC.h5ad
+EXIT 0

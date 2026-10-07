@@ -15,7 +15,15 @@ from pertbench.splits import SPLITS, Split
 
 
 def evaluate_split(model: Model, ct: ConditionTable, split: Split, top_k: int = 20) -> pd.DataFrame:
-    train, test = ct.subset(split.train), ct.subset(split.test)
+    train = ct.subset(split.train)
+    # A test condition can only be scored if its context (cell type, donor) has a control:
+    # with min_cells filtering, e.g. a rare cell type's day-0 group may be dropped in one assay.
+    ctrl_ctx = set(map(tuple, train.obs.loc[train.is_control(), ["cell_type", "donor"]].itertuples(index=False, name=None)))
+    has_ctrl = np.array([(c, d) in ctrl_ctx for c, d in ct.obs[["cell_type", "donor"]].itertuples(index=False, name=None)])
+    test_mask = split.test & has_ctrl
+    if (split.test & ~has_ctrl).any():
+        print(f"[pertbench] {split.name}: {int((split.test & ~has_ctrl).sum())} test koşulu kontrolsüz olduğu için atlandı")
+    test = ct.subset(test_mask)
     m = copy.deepcopy(model)
     t0 = time.perf_counter()
     m.fit(train)
