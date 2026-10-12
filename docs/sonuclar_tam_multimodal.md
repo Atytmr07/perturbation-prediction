@@ -42,3 +42,28 @@ Hücre tipi l1. Değerler gün bazında medyan.
 
 ## Not
 Tam tablo, iki assay'de de yeterli hücresi olan koşulları kullandığı için (176 koşul), sadece CITE ile çalışan önceki tablodan (192 koşul) farklı bir koşul kümesine sahip. Bu yüzden RNA sayıları iki tablo arasında doğrudan karşılaştırılamaz.
+
+---
+
+## Ek: İnce hücre tipleri (l2), 12 Ekim 2026
+26–30 alt tip; 384 koşul, 263 test koşulu. Ayrıntı: `results/LEADERBOARD.md`, `results/covid_lodo_full_l2/`, `results/covid_signal_noise_full_l2.csv`.
+
+| Modalite | NoChange | PerturbationMean | Not |
+|---|---|---|---|
+| RNA | 0,240 | **0,205** | ContextRidge pearson_δ'da önde (0,231 / 0,211), ama MSE'de geride. Koşulların sadece %35'inde çıtayı geçiyor |
+| CITE protein | **0,068** | 0,070 | Değişim yok tahmini en iyi |
+| ATAC | **0,107** | 0,109 | Değişim yok tahmini en iyi |
+| ASAP protein | **0,040** | 0,042 | Değişim yok tahmini en iyi |
+
+**Sinyal/gürültü (l2, gün bazında medyan):**
+- RNA: ortak etki / gürültü 0,36–0,71; donöre özgü pay %33–65.
+- Protein: 0,32–0,56; donöre özgü pay %38–61.
+- **ATAC: 0,19–0,22; donöre özgü pay %0.** En iyi alt tipte bile (B intermediate, CD14 Mono; gün 2) ortak etki / gürültü ≤ 0,35.
+
+**Yorum:**
+1. İnce hücre tiplerine inmek sonucu değiştirmedi. Hücre başına sayı azaldığı için gürültü arttı; proteinde artık "değişim yok" tahmini bile en iyi.
+2. **ATAC'ta aşı etkisi, en değişken 20 bin peak ile pseudobulk düzeyinde hiçbir hücre tipinde görünmüyor.** Bir sonraki deneme peak seçimiyle ilgili olmalı:
+   - (a) Veri setindeki aşıya cevap veren bölgeler (`antigen_module_peaks.rds`).
+   - (b) Peak'leri genlere toplayan gene activity skorları.
+   - (c) Motif / chromVAR tarzı skorlar.
+3. RNA'da donör-farkında modeller hâlâ çıtayı geçemiyor. Asıl test, entegrasyon omurgası (MultiVI) ve MultiPert'in COVID uyarlaması olacak (roadmap B ve A izleri).

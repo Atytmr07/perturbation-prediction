@@ -18,6 +18,20 @@ Ortak protokol: `docs/11_ortak_roadmap.md`. Değerlendirme: 6 fold, `--strict` (
 | ContextRidge | 0 | **0,287** | 0,174 | 0,077 | 0,059 | 0,021 | **0,070** | 0,109 | 0,031 | Donör-farkında |
 | CrossModal[PerturbationMean] | 0 | 0,278 | 0,165 | 0,090 | 0,058 | **0,024** | 0,070 | **0,121** | **0,030** | Protein/ATAC'ı RNA değişiminden tahmin ediyor |
 
+## Tam multimodal, ince hücre tipi l2 (CITE `celltypel2` / ASAP `predicted.CITE_l2`)
+*12 Ekim 2026 · `results/covid_lodo_full_l2/` · 384 koşul, 263 test koşulu. Kontrolsüz koşullar atlandı.*
+
+| Model | RNA pearson_δ | RNA mse_top20 | CITE-protein pearson_δ | CITE-protein mse_top20 | ATAC pearson_δ | ATAC mse_top20 | ASAP-protein pearson_δ | ASAP-protein mse_top20 |
+|---|---|---|---|---|---|---|---|---|
+| NoChange | – | 0,240 | – | **0,068** | – | **0,107** | – | **0,040** |
+| **PerturbationMean** | 0,211 | **0,205** | **0,071** | 0,070 | 0,011 | 0,109 | 0,054 | 0,042 |
+| Additive | 0,211 | 0,208 | 0,067 | 0,069 | 0,010 | 0,109 | 0,053 | 0,042 |
+| ContextKNN | 0,187 | 0,214 | 0,011 | 0,076 | 0,010 | 0,109 | 0,045 | 0,043 |
+| ContextRidge | **0,231** | 0,215 | 0,017 | 0,071 | 0,012 | 0,107 | 0,039 | 0,040 |
+| CrossModal[PerturbationMean] | 0,211 | 0,205 | 0,066 | 0,069 | 0,012 | 0,108 | **0,057** | 0,041 |
+
+ContextRidge, RNA'da test koşullarının sadece %35'inde PerturbationMean'den iyi.
+
 ## Sadece CITE (RNA + protein), hücre tipi l1
 *2 Ekim 2026 · `results/covid_lodo_cite_l1/` · 192 koşul. Koşul kümesi tam tablodan farklı olduğu için sayılar doğrudan karşılaştırılamaz.*
 
