@@ -135,9 +135,16 @@ def _sparse_norm_select(X, kind: str, n_top: int | None):
     return X, keep
 
 
+def _feature_list(spec) -> set[str]:
+    if isinstance(spec, (str, Path)):
+        return {ln.strip() for ln in Path(spec).read_text(encoding="utf-8").splitlines() if ln.strip()}
+    return set(map(str, spec))
+
+
 def covid_vaccine(files: dict, donor_key: str, day_key: str, cell_type_key: str | dict, control_day: str,
                   norm: dict | None = None, n_top: dict | None = None, min_cells: int = 10,
-                  cell_type_map: dict | None = None, train_donors: list[str] | None = None):
+                  cell_type_map: dict | None = None, train_donors: list[str] | None = None,
+                  features: dict | None = None):
     """Zhang et al. 2023 (Nat Immunol) COVID vaccination: 6 donors x day 0/2/11/28,
     CITE-seq (RNA+ADT) and ASAP-seq (ATAC+ADT) on different aliquots of the same samples.
 
@@ -153,6 +160,9 @@ def covid_vaccine(files: dict, donor_key: str, day_key: str, cell_type_key: str 
         (CITE "celltypel1" vs ASAP "predicted.CITE_l1").
     norm / n_top: keyed by modality ("adt") or, to override one table, "<table>_<modality>"
         (e.g. {"asap_adt": "none"} because ASAP only ships scaled ADT values).
+    features: fixed feature list per modality (same keys as norm), as a list of names or a path to a
+        text file with one name per line. Replaces top-variance selection for that modality, e.g.
+        {"atac": "data/covid/antigen_module_peaks.txt"}. Names missing from the data are ignored.
     """
     import anndata as ad
     from pertbench.data import ConditionTable, merge_tables, pseudobulk_sparse
@@ -175,7 +185,15 @@ def covid_vaccine(files: dict, donor_key: str, day_key: str, cell_type_key: str 
             obs = pd.DataFrame({"perturbation": np.where(day == str(control_day), "control", label),
                                 "cell_type": ct.to_numpy(), "donor": o[donor_key].astype(str).to_numpy()})
             names = np.asarray(a.var_names.astype(str))
-            if train_donors is None:
+            fixed = (features or {}).get(f"{tname}_{m}", (features or {}).get(m))
+            if fixed is not None:  # normalise on all features, then keep the given ones
+                wanted = _feature_list(fixed)
+                X, _ = _sparse_norm_select(a.X, kind, None)
+                keep = np.array([i for i, n in enumerate(names) if n in wanted])
+                if len(keep) == 0:
+                    raise ValueError(f"{tname}_{m}: none of the given features are in {path}")
+                X = X[:, keep]
+            elif train_donors is None:
                 X, keep = _sparse_norm_select(a.X, kind, top)
             else:  # pick features on training donors only, then apply to everyone
                 in_train = obs["donor"].isin(train_donors).to_numpy()

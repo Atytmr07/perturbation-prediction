@@ -67,3 +67,38 @@ Tam tablo, iki assay'de de yeterli hücresi olan koşulları kullandığı için
    - (b) Peak'leri genlere toplayan gene activity skorları.
    - (c) Motif / chromVAR tarzı skorlar.
 3. RNA'da donör-farkında modeller hâlâ çıtayı geçemiyor. Asıl test, entegrasyon omurgası (MultiVI) ve MultiPert'in COVID uyarlaması olacak (roadmap B ve A izleri).
+
+---
+
+## Ek: ATAC'ta aşıya özgü bölgeler, 12 Ekim 2026
+**Deneme:** ATAC'ta en değişken 20 bin peak yerine, veri setiyle gelen `antigen_module_peaks.rds` kullanıldı (2.678 peak; makalede aşıya özgü CD8 T hücrelerinde açılan bölgeler). Yükleyiciye `features` seçeneği eklendi (`data/covid/antigen_module_peaks.txt`).
+- Konfigürasyonlar: `scripts/covid/config_antigen_peaks_l1.json`, `config_antigen_peaks_l2.json`
+- Sonuçlar: `results/covid_lodo_antigen_peaks_{l1,l2}/`, `results/covid_signal_noise_antigen_peaks_{l1,l2}.csv`
+- ⚠ Bu peak listesi makalede **tüm donörlerle** belirlendi. Görülmemiş donör testi açısından hafif bir sızıntı taşıyor.
+
+| | ATAC pearson_δ (PerturbationMean) | ATAC mse_top20: NoChange / PerturbationMean | Ortak etki / gürültü (medyan) |
+|---|---|---|---|
+| En değişken 20 bin peak, l1 | 0,020 | 0,071 / 0,071 | ~0,20 |
+| **Aşıya özgü 2.678 peak, l1** | 0,038 | 0,027 / 0,027 | 0,21–0,27. T hücrelerinde 11. ve 28. gün **0,29–0,40**; CD8 T'de donöre özgü pay %51–69 |
+| Aşıya özgü 2.678 peak, l2 | 0,018 | 0,042 / 0,042 | 0,20–0,27 (CD8 TEM'de bile ≤ 0,3) |
+
+**Sonuç:** Aşıya özgü bölgeler, T hücrelerinde sinyali yaklaşık iki katına çıkarıyor, ama sinyal hâlâ gürültünün altında. Hiçbir model "değişim yok" tahminini geçemiyor.
+
+### Neden? Etki nadir bir hücre grubunda yoğunlaşıyor ve donöre çok bağlı
+Hücre başına makale skorları (`antigen_module_score`: CITE/RNA, `GA_antigen_score`: ASAP/ATAC). CD8 T içinde, skoru gün 0 CD8 T'lerinin %95'lik eşiğinin üstünde olan hücrelerin oranı:
+
+| Donör | RNA modülü (gün 0 → 2 → 11 → 28) | ATAC modülü (gün 0 → 28) |
+|---|---|---|
+| donorJ | 8,0 → 12,9 → 9,6 → **33,3** | 5,7 → **11,8** |
+| donorF | 4,8 → 7,7 → 4,3 → **12,6** | 5,1 → 3,5 |
+| donorA | 0,5 → 1,1 → 0,2 → 3,9 | 1,8 → 2,3 |
+| donorM | 9,6 → 14,6 → 6,4 → 3,3 | 10,5 → 7,6 |
+| donorB | 5,7 → 4,4 → 0,4 → 1,9 | 6,1 → 3,5 |
+| donorE | 4,3 → 6,5 → 1,7 → 0,3 | 3,8 → 4,0 |
+
+**Yorum:**
+1. 28. günde aşıya cevap veren CD8 T oranı donörler arasında **%0,3 ile %33** arasında değişiyor. Bu, verideki en güçlü donöre özgü sinyal.
+2. Bu sinyal küçük bir alt popülasyonda olduğu için, hücre tipi ortalamasında (pseudobulk) seyreliyor. ATAC'ta sinyal çıkmamasının ana nedeni bu.
+3. ATAC modülünde artış sadece en güçlü cevap veren donörde (donorJ) görülüyor.
+
+**Öneri:** Donör sorusu için hedefi, ortalama profil yerine **"aşıya cevap veren hücre oranı"** gibi bir alt popülasyon ölçüsüne kaydırmak. Soru şu olur: "Donörün gün 0 hücrelerinden, gün 28'de ne kadar güçlü bir antijen-spesifik T hücre cevabı oluşacağını tahmin edebilir miyiz?" Bu hem biyolojik olarak anlamlı, hem de verideki asıl donör farkını hedefliyor. 6 donörle istatistiksel güç çok düşük, bu yüzden bu ilk aşamada betimsel bir bulgu.

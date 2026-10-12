@@ -188,3 +188,16 @@ def test_evaluate_skips_conditions_without_control(ct):
     sub = ct.subset(~drop)
     df = evaluate_split(PerturbationMean(), sub, unseen_context(sub, "donor", "donor1"))
     assert len(df) and "ct0" not in set(df["cell_type"])
+
+
+def test_covid_loader_fixed_feature_list(tmp_path):
+    from pertbench.datasets import covid_vaccine
+    cfg = _fake_covid(tmp_path)
+    wanted = ["atac3", "atac7", "atac42", "not_a_peak"]
+    f = tmp_path / "peaks.txt"
+    f.write_text("\n".join(wanted) + "\n", encoding="utf-8")
+    for spec in (str(f), wanted):
+        ct = covid_vaccine(features={"atac": spec}, **cfg)
+        assert ct.var["atac"] == ["atac3", "atac7", "atac42"]
+        strict = covid_vaccine(features={"atac": spec}, train_donors=["D1", "D2", "D3", "D4", "D5"], **cfg)
+        assert strict.var["atac"] == ["atac3", "atac7", "atac42"]

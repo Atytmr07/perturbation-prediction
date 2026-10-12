@@ -30,7 +30,7 @@ import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
 from pertbench.data import pseudobulk_sparse  # noqa: E402
-from pertbench.datasets import _sparse_norm_select  # noqa: E402
+from pertbench.datasets import _feature_list, _sparse_norm_select  # noqa: E402
 
 NORM = {"rna": "log1p_cp10k", "adt": "clr", "atac": "binary_log1p_cp10k"}
 
@@ -51,7 +51,13 @@ def main():
             x = ad.read_h5ad(path)
             o = x.obs
             half = np.where(rng.random(len(o)) < 0.5, "A", "B")
-            X, _ = _sparse_norm_select(x.X, NORM[m], n_top.get(m))
+            fixed = cfg.get("features", {}).get(f"{tname}_{m}", cfg.get("features", {}).get(m))
+            if fixed is not None:  # same rule as the loader: normalise on all, keep the given list
+                wanted = _feature_list(fixed)
+                X, _ = _sparse_norm_select(x.X, NORM[m], None)
+                X = X[:, [i for i, n in enumerate(x.var_names.astype(str)) if n in wanted]]
+            else:
+                X, _ = _sparse_norm_select(x.X, NORM[m], n_top.get(m))
             day = o[cfg["day_key"]].astype(str).to_numpy()
             obs = pd.DataFrame({
                 "perturbation": day,
