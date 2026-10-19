@@ -133,7 +133,7 @@ Baseline hücreleri (donör D, gün 0): CITE (RNA+ADT) + ASAP (ATAC+ADT)
 
 ## 12. Plan
 
-> **Güncel plan (5 Ekim): `docs/11_ortak_roadmap.md`.** Herkes farklı bir yaklaşım dener: A = MultiPert'in COVID uyarlaması, B = MultiVI, C = MIDAS/totalVI, 0 = altyapı. Hepsi aynı LODO protokolüyle `results/LEADERBOARD.md`'ye yazılır; en iyi sonucun üzerine eklenir. Aşağıdaki sprint planı arşivdir. Zaman noktaları: gün 0/2/**11**/28.
+> **Güncel plan (19 Ekim): `docs/12_roadmap_ekim_sonu.md`** (eski: `docs/11_ortak_roadmap.md`). Herkes farklı bir yaklaşım dener: A = MultiPert'in COVID uyarlaması, B = MultiVI, C = MIDAS/totalVI, 0 = altyapı. Hepsi aynı LODO protokolüyle `results/LEADERBOARD.md`'ye yazılır; en iyi sonucun üzerine eklenir. Aşağıdaki sprint planı arşivdir. Zaman noktaları: gün 0/2/**11**/28.
 
 ### (Arşiv) 2 haftalık sprint
 
