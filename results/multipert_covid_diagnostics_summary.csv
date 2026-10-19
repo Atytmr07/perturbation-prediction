@@ -1,0 +1,19 @@
+experiment,modality,metric,multipert,baseline,baseline_name,interpretation
+standard_cell_split,RNA,PCC,0.692,,,Standard split looks reasonable but is not unseen-donor evaluation
+standard_cell_split,ADT,PCC,0.653,,,Standard split looks reasonable but is not unseen-donor evaluation
+LODO_global,RNA,PCC,0.615,0.408,Copy-control,MultiPert beats simple Day0 copying
+LODO_global,ADT,PCC,0.631,0.488,Copy-control,MultiPert beats simple Day0 copying
+LODO_global,RNA,PCC,0.615,0.616,Mean-Day28,Population average matches MultiPert
+LODO_global,ADT,PCC,0.631,0.633,Mean-Day28,Population average matches MultiPert
+celltype_delta,RNA,Delta_PCC,0.193,0.233,Mean-Day28,Donor-specific response is weak
+celltype_delta,ADT,Delta_PCC,0.150,0.152,Mean-Day28,Donor-specific response is weak
+celltype_meandelta,RNA,Day28_PCC,0.884,0.986,Cell-type Mean-Delta,Simple Day0 plus mean response preserves state much better
+celltype_meandelta,RNA,Day28_MSE,0.077,0.007,Cell-type Mean-Delta,Simple Day0 plus mean response preserves state much better
+celltype_meandelta,ADT,Day28_PCC,0.795,0.993,Cell-type Mean-Delta,Simple Day0 plus mean response preserves state much better
+celltype_meandelta,ADT,Day28_MSE,0.664,0.026,Cell-type Mean-Delta,Simple Day0 plus mean response preserves state much better
+celltype_meandelta,RNA,Delta_PCC,0.194,0.190,Cell-type Mean-Delta,No clear MultiPert advantage on response delta
+celltype_meandelta,ADT,Delta_PCC,0.150,0.103,Cell-type Mean-Delta,Only modest advantage and delta remains weak
+prediction_variance,RNA,Variance_ratio,3.84e-10,,,Predictions are effectively constant across cells
+prediction_variance,ADT,Variance_ratio,7.42e-09,,,Predictions are effectively constant across cells
+prediction_permutation,RNA,PCC_drop_after_shuffle,2.15e-12,,,Shuffling prediction rows does not hurt performance
+prediction_permutation,ADT,PCC_drop_after_shuffle,2.43e-11,,,Shuffling prediction rows does not hurt performance
