@@ -13,10 +13,11 @@ Roadmap paketi **P2** (`docs/12_roadmap_ekim_sonu.md`). Aynı soru iki ayrı pip
 |---|---|---|
 | Görev | Gün 0 → gün 2, 11 ve 28 (gün one-hot) | Gün 0 → gün 28 |
 | Bölme | LODO, 6 fold | LODO, 6 fold (ayrıca hücre düzeyinde standart bölme) |
-| Ön işleme | Her fold'da yalnız eğitim donörlerinden 2.000 HVG, CP10k + log1p (sızıntısız) | Hazırlanmış h5ad, CP10k + log1p (HVG hangi hücrelerden seçildi: açık soru) |
+| Ön işleme | Her fold'da yalnız eğitim donörlerinden 2.000 HVG, CP10k + log1p (sızıntısız) | Her fold'da yalnız eğitim donörlerinden 5.000 HVG, CP10k + log1p (sızıntısız) |
 | Eşleşme | `donor` (aynı donör ve hücre tipi) ve `random` (orijinal) | Aynı donör; sonra aynı donör ve hücre tipi |
 | Metrik | pertbench: pseudobulk pearson_δ, mse_top20, yön doğruluğu; 30 PC'de MMD/enerji | Düzleştirilmiş PCC, pseudobulk Δ-PCC, varyans oranı, permütasyon testi |
 | Baseline | NoChange, PerturbationMean, Additive, ContextRidge | Copy-control (= NoChange), Mean-Day28 (= GlobalMean'in gün 28 karşılığı), Mean-Delta (= PerturbationMean) |
+| Eğitim | lr 1e-3 / 2e-3 (orijinal), en fazla 400 epoch, patience 20, CPU (torch 2.14.1) | lr 1e-3 / 2e-3 (orijinal), en fazla 1000 epoch, patience 20, encoder pretrain 10 epoch, CPU (torch 2.0.0); örn. donorJ/M 22. epoch'ta durdu |
 
 ## Sonuçlar (Atay, 6 fold, 144 test koşulu)
 
@@ -71,10 +72,12 @@ Roadmap paketi **P2** (`docs/12_roadmap_ekim_sonu.md`). Aynı soru iki ayrı pip
   - (a) Düşük lr / adversarial kayıp kapalı (Atay, CPU).
   - (b) Δ'yı ölçekleyen kalibrasyon: MultiPert'in değişim yönü + PerturbationMean büyüklüğü. Basit ama kayda değer bir kontrol.
   - (c) Kayıp olarak MMD (Bengisu ile birlikte; GPU varsa Kaggle/okul PC).
-- **Bengisu'ya sorular:**
-  1. HVG / hazırlanmış h5ad hangi hücrelerden üretildi? Test donörü dahil mi?
-  2. Kaç epoch, CPU mu GPU mu, hangi lr?
-  3. Fold çıktıları (`output_lodo_celltype_<donor>_full/`) nerede?
+- **Bengisu'nun cevapları (20 Ekim):**
+  - HVG her fold'da yalnız eğitim donörlerinden seçilmiş; sızıntı yok.
+  - lr orijinal ayarda; eğitim CPU'da.
+  - Yani iki bağımsız, sızıntısız pipeline aynı çöküşü buluyor. HVG sayısı, torch sürümü ve gün kurgusu farklı; sonuç sağlam.
+  - İkisi de aynı lr'yi kullandı. Bu yüzden sıradaki ayırt edici deney (a): düşük lr, adversarial kayıp kapalı.
+  - Açık kalan: fold çıktıları (`output_lodo_celltype_<donor>_full/`) nerede?
 
 ## Dosyalar
 - `results/multipert_covid_{donor,random}_celltypel1_s1/`:
