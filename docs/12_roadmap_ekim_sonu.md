@@ -9,7 +9,8 @@
   - Protein ve ATAC'ta hiçbir model "değişim yok" tahmininden iyi değil.
 - **ATAC:** En değişken peak'lerle de, makalenin aşıya özgü 2.678 peak'iyle de etki gürültünün altında.
 - **Ana bulgu:** Aşının etkisi nadir bir hücre grubunda yoğunlaşıyor ve donöre çok bağlı. Gün 28'de aşıya cevap veren CD8 T oranı donörler arasında %0,3–33. Ayrıntı: `docs/sonuclar_tam_multimodal.md`.
-- **Başlamayanlar:** MultiPert'in COVID uyarlaması, MultiVI, MIDAS/totalVI. 12 Ekim'den beri ekipten yeni teslim yok.
+- **P2 tamam (20 Ekim):** MultiPert COVID LODO, Atay ve Bengisu bağımsız olarak. Model çöküyor, çıtayı geçemiyor: `docs/14_multipert_covid_sonuclar.md`, `docs/13_multipert_covid_diagnostics.md`.
+- **Başlamayanlar:** MultiVI, MIDAS/totalVI.
 
 ## İş paketleri
 Herkes bir paket üstlenir; sorumlular toplantıda belirlenir.

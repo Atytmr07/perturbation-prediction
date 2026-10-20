@@ -1,0 +1,15 @@
+{
+  "rna": "C:\\Projects\\master\\pertubation-prediction\\data\\covid\\PBMC_vaccine_CITE__RNA.h5ad",
+  "adt": "C:\\Projects\\master\\pertubation-prediction\\data\\covid\\PBMC_vaccine_CITE__ADT.h5ad",
+  "cell_type_key": "celltypel1",
+  "donors": null,
+  "pairing": "random",
+  "cap": 300,
+  "n_hvg": 2000,
+  "epochs": 400,
+  "patience": 20,
+  "min_cells": 10,
+  "threads": 6,
+  "seed": 1,
+  "out": null
+}
