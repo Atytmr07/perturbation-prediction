@@ -63,7 +63,12 @@ fused_embed = attn_output * channel_weights
 - MultiPert pratikte "her perturbation için öğrenilmiş bir ortalama profil" modeli. Bu, `PerturbationMean`'den bile zayıf: tahmine kontrol hücresinin durumunu da eklemiyor.
 - Makaledeki THP-1 PCC 0,78, bu sabit profilin tek tek hücrelerle korelasyonu.
 - Makaledeki UMAP'ler ve MMD/Wasserstein hizalama eğrileri ara katmanlara ait. Tahmine katkıları yok.
-- ⚠ Makaledeki denklemler (12–14) okunamadı. Tasarımın böyle mi amaçlandığı, yoksa bir kod hatası mı olduğu bilinmiyor. Hocaya "yayımlanan kodda" diye söylenmeli.
+- **Makaledeki tanım da aynı** (PDF s. 7, `docs/papers/Zhao2026_MultiPert_PLOSCompBiol.pdf`):
+  - Denklem 12: attn = MultiHeadAttn(Query = [z_c ‖ z_f], Key = Value = p_c).
+  - Denklem 13: w = σ(W₄ · ReLU(W₃ · avgpool(attn))).
+  - Denklem 14: z = attn ⊙ w.
+  - Residual bağlantı yok; decoder'a z gidiyor. Her hücre için tek bir perturbation token'ı (anahtar) olduğundan, attn = W_o·W_v·p.
+  - Yani bu bir kod hatası değil, **makaledeki tasarımın kendisi**: tahmin, tanım gereği hücreden bağımsız.
 
 ## 4. Değerlendirme (makalede)
 - **Metrikler:** MSE ve PCC. Hücre × gen düzleştirilerek, ham değerlerde; delta (değişim) yok.
@@ -147,6 +152,6 @@ Yayımlanan tek multimodal perturbation modeli MultiPert, tahmini hücreden ve d
 3. D2'nin pseudobulk versiyonu.
 
 ## 8. Açık sorular
-- Makaledeki denklem 12–14 residual içeriyor mu? Kodla makale tutarlı mı? Yazarlara sorulabilir.
+- ~~Makaledeki denklem 12–14 residual içeriyor mu?~~ Cevaplandı (22 Ekim): İçermiyor; kod makaleyle tutarlı (§3).
 - LOO deneyinde GEARS embedding'i fold başına yeniden eğitildi mi?
 - PBMC multiome deneyinde ATAC nasıl verildi? Ek tablolar okunmalı.
