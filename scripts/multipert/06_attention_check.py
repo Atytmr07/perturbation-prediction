@@ -33,6 +33,27 @@ with torch.no_grad():
     o2 = att(cells, torch.randn(5, 64))
 print(f"different perturbations -> max output difference: {(o2 - o2[0]).abs().max():.2e}")
 
+# Which modules does the reconstruction (MSE) loss actually train? Same wiring as trainer.py.
+from models import (ZINBVAE, Autoencoder, Decoder, FusionNetwork,  # noqa: E402
+                    PerturbationEncoder, SharedEncoder)
+d_rna, d_adt, d_pert = 50, 4, 64
+mods = {"rna_specific": ZINBVAE(d_rna, 32), "adt_specific": Autoencoder(d_adt, 32),
+        "shared_rna": SharedEncoder(d_rna, 32), "shared_adt": SharedEncoder(d_adt, 32),
+        "fusion": FusionNetwork(64, 32), "pert_enc_rna": PerturbationEncoder(d_pert, 64),
+        "pert_enc_adt": PerturbationEncoder(d_pert, 64), "attention": DualFusionAttention(64),
+        "decoder_rna": Decoder(64, d_rna), "decoder_adt": Decoder(64, d_adt)}
+rna, adt, pert = torch.rand(16, d_rna), torch.rand(16, d_adt), torch.randn(16, d_pert)
+rna_spec, _ = mods["rna_specific"].encode(rna)
+adt_spec = mods["adt_specific"].encoder(adt)
+fused = mods["fusion"](mods["shared_rna"](rna), mods["shared_adt"](adt))
+out_rna = mods["decoder_rna"](mods["attention"](torch.cat((rna_spec, fused), 1), mods["pert_enc_rna"](pert)))
+out_adt = mods["decoder_adt"](mods["attention"](torch.cat((adt_spec, fused), 1), mods["pert_enc_adt"](pert)))
+(((out_rna - torch.rand_like(out_rna)) ** 2).mean() + ((out_adt - torch.rand_like(out_adt)) ** 2).mean()).backward()
+print("gradient of the reconstruction loss per module (0 = never trained by it):")
+for name, m in mods.items():
+    g = sum(float(q.grad.abs().sum()) for q in m.parameters() if q.grad is not None)
+    print(f"  {name:13s} {g:.2e}")
+
 pred = ROOT / "results" / "multipert_original" / "predict.h5ad"
 if pred.exists():
     import anndata as ad
