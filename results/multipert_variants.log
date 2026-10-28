@@ -1,0 +1,282 @@
+=== original
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 57.2771 (best 57.2771)
+epoch 20: val 45.8204 (best 45.8204)
+epoch 30: val 34.0900 (best 34.0900)
+epoch 40: val 22.5339 (best 22.5339)
+epoch 50: val 12.4751 (best 12.4751)
+epoch 60: val 5.2823 (best 5.2823)
+epoch 70: val 1.6487 (best 1.6487)
+epoch 80: val 0.4594 (best 0.4594)
+epoch 90: val 0.2007 (best 0.2007)
+epoch 100: val 0.1583 (best 0.1583)
+epoch 110: val 0.1561 (best 0.1531)
+epoch 120: val 0.1533 (best 0.1524)
+epoch 130: val 0.1570 (best 0.1524)
+epoch 140: val 0.1577 (best 0.1521)
+epoch 150: val 0.1556 (best 0.1521)
+early stop at epoch 154
+rna: spread of predicted cells within a knockout 0.0000 (observed 0.2259)
+adt: spread of predicted cells within a knockout 0.0000 (observed 0.2421)
+-> C:\Projects\master\pertubation-prediction\results\multipert_variant_original
+                           paper_pcc  pearson  pearson_delta  pearson_delta_top20  mse_top20  direction_acc_top20    mmd  energy
+modality model                                                                                                                  
+adt      LeaveOutMean            NaN    0.982          0.470                0.470      0.005                0.694    NaN     NaN
+         MultiPert             0.767    0.983          0.575                0.575      0.004                0.639  1.380   0.281
+         NoChange                NaN    0.973            NaN                  NaN      0.006                0.000  0.079   0.035
+         PerturbationMean        NaN    0.997          0.953                0.953      0.001                0.861  0.000   0.000
+rna      LeaveOutMean            NaN    0.987          0.617                0.818      0.264                0.939    NaN     NaN
+         MultiPert             0.774    0.996          0.833                0.983      0.010                1.000  1.175   5.066
+         NoChange                NaN    0.982            NaN                  NaN      0.418                0.000  0.176   1.593
+         PerturbationMean        NaN    0.997          0.861                0.983      0.007                1.000 -0.001  -0.018
+
+-> results\multipert_variant_original\rescored_summary.csv
+DONE original
+=== residual
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 33.1245 (best 33.1245)
+epoch 20: val 15.8019 (best 15.8019)
+epoch 30: val 4.0134 (best 4.0134)
+epoch 40: val 0.4338 (best 0.4338)
+epoch 50: val 0.1640 (best 0.1640)
+epoch 60: val 0.1576 (best 0.1570)
+epoch 70: val 0.1573 (best 0.1567)
+epoch 80: val 0.1599 (best 0.1563)
+epoch 90: val 0.1577 (best 0.1563)
+early stop at epoch 91
+rna: spread of predicted cells within a knockout 0.0298 (observed 0.2259)
+adt: spread of predicted cells within a knockout 0.0089 (observed 0.2421)
+-> C:\Projects\master\pertubation-prediction\results\multipert_variant_residual
+                           paper_pcc  pearson  pearson_delta  pearson_delta_top20  mse_top20  direction_acc_top20    mmd  energy
+modality model                                                                                                                  
+adt      LeaveOutMean            NaN    0.982          0.470                0.470      0.005                0.694    NaN     NaN
+         MultiPert             0.767    0.983          0.579                0.579      0.004                0.667  1.357   0.263
+         NoChange                NaN    0.973            NaN                  NaN      0.006                0.000  0.079   0.035
+         PerturbationMean        NaN    0.997          0.953                0.953      0.001                0.861  0.000   0.000
+rna      LeaveOutMean            NaN    0.987          0.617                0.818      0.264                0.939    NaN     NaN
+         MultiPert             0.764    0.995          0.791                0.971      0.026                1.000  0.476   1.709
+         NoChange                NaN    0.982            NaN                  NaN      0.418                0.000  0.176   1.593
+         PerturbationMean        NaN    0.997          0.861                0.983      0.007                1.000 -0.001  -0.018
+
+-> results\multipert_variant_residual\rescored_summary.csv
+DONE residual
+=== film
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 33.2141 (best 33.2141)
+epoch 20: val 15.9038 (best 15.9038)
+epoch 30: val 4.0390 (best 4.0390)
+epoch 40: val 0.4307 (best 0.4307)
+epoch 50: val 0.1647 (best 0.1647)
+epoch 60: val 0.1571 (best 0.1570)
+epoch 70: val 0.1573 (best 0.1566)
+epoch 80: val 0.1578 (best 0.1566)
+early stop at epoch 86
+rna: spread of predicted cells within a knockout 0.0328 (observed 0.2259)
+adt: spread of predicted cells within a knockout 0.0181 (observed 0.2421)
+-> C:\Projects\master\pertubation-prediction\results\multipert_variant_film
+                           paper_pcc  pearson  pearson_delta  pearson_delta_top20  mse_top20  direction_acc_top20    mmd  energy
+modality model                                                                                                                  
+adt      LeaveOutMean            NaN    0.982          0.470                0.470      0.005                0.694    NaN     NaN
+         MultiPert             0.766    0.982          0.567                0.567      0.004                0.722  1.311   0.247
+         NoChange                NaN    0.973            NaN                  NaN      0.006                0.000  0.079   0.035
+         PerturbationMean        NaN    0.997          0.953                0.953      0.001                0.861  0.000   0.000
+rna      LeaveOutMean            NaN    0.987          0.617                0.818      0.264                0.939    NaN     NaN
+         MultiPert             0.762    0.995          0.790                0.966      0.021                1.000  0.457   1.683
+         NoChange                NaN    0.982            NaN                  NaN      0.418                0.000  0.176   1.593
+         PerturbationMean        NaN    0.997          0.861                0.983      0.007                1.000 -0.001  -0.018
+
+-> results\multipert_variant_film\rescored_summary.csv
+DONE film
+=== film_wide
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 0.1583 (best 0.1583)
+epoch 20: val 0.1567 (best 0.1556)
+epoch 30: val 0.1562 (best 0.1556)
+early stop at epoch 37
+rna: spread of predicted cells within a knockout 0.0113 (observed 0.2259)
+adt: spread of predicted cells within a knockout 0.0428 (observed 0.2421)
+-> C:\Projects\master\pertubation-prediction\results\multipert_variant_film_wide
+                           paper_pcc  pearson  pearson_delta  pearson_delta_top20  mse_top20  direction_acc_top20    mmd  energy
+modality model                                                                                                                  
+adt      LeaveOutMean            NaN    0.982          0.470                0.470      0.005                0.694    NaN     NaN
+         MultiPert             0.759    0.982          0.580                0.580      0.005                0.694  1.130   0.214
+         NoChange                NaN    0.973            NaN                  NaN      0.006                0.000  0.079   0.035
+         PerturbationMean        NaN    0.997          0.953                0.953      0.001                0.861  0.000   0.000
+rna      LeaveOutMean            NaN    0.987          0.617                0.818      0.264                0.939    NaN     NaN
+         MultiPert             0.770    0.993          0.712                0.950      0.063                0.989  1.059   4.065
+         NoChange                NaN    0.982            NaN                  NaN      0.418                0.000  0.176   1.593
+         PerturbationMean        NaN    0.997          0.861                0.983      0.007                1.000 -0.001  -0.018
+
+-> results\multipert_variant_film_wide\rescored_summary.csv
+DONE film_wide
+=== film_mmd
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 1.4902 (best 1.4902)
+epoch 20: val 0.7362 (best 0.6870)
+epoch 30: val 0.6481 (best 0.5937)
+epoch 40: val 0.6216 (best 0.5634)
+epoch 50: val 0.6126 (best 0.5381)
+epoch 60: val 0.5662 (best 0.5381)
+epoch 70: val 0.5885 (best 0.5350)
+epoch 80: val 0.6099 (best 0.5350)
+epoch 90: val 0.5258 (best 0.4716)
+epoch 100: val 0.5755 (best 0.4716)
+epoch 110: val 0.6536 (best 0.4582)
+epoch 120: val 0.5308 (best 0.4582)
+early stop at epoch 129
+rna: spread of predicted cells within a knockout 0.2727 (observed 0.2259)
+adt: spread of predicted cells within a knockout 0.2006 (observed 0.2421)
+-> C:\Projects\master\pertubation-prediction\results\multipert_variant_film_mmd
+                           paper_pcc  pearson  pearson_delta  pearson_delta_top20  mse_top20  direction_acc_top20    mmd  energy
+modality model                                                                                                                  
+adt      LeaveOutMean            NaN    0.982          0.470                0.470      0.005                0.694    NaN     NaN
+         MultiPert             0.588    0.966         -0.056               -0.056      0.008                0.583  0.140   0.054
+         NoChange                NaN    0.973            NaN                  NaN      0.006                0.000  0.079   0.035
+         PerturbationMean        NaN    0.997          0.953                0.953      0.001                0.861  0.000   0.000
+rna      LeaveOutMean            NaN    0.987          0.617                0.818      0.264                0.939    NaN     NaN
+         MultiPert             0.606    0.991          0.647                0.944      0.029                0.983  0.059   0.406
+         NoChange                NaN    0.982            NaN                  NaN      0.418                0.000  0.176   1.593
+         PerturbationMean        NaN    0.997          0.861                0.983      0.007                1.000 -0.001  -0.018
+
+-> results\multipert_variant_film_mmd\rescored_summary.csv
+DONE film_mmd
