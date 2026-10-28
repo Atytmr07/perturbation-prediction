@@ -9,6 +9,10 @@ original run (results/multipert_original); only the part named by --variant chan
   film_wide  film + protein decoder 64 -> 32 -> 4      (instead of 64 -> 2 -> 4)
   film_mmd   film_wide + MMD between predicted and observed cells of each knockout in the batch
              (+ 0.1 x MSE), instead of MSE on randomly paired cells
+  film_mmdmean      film_wide + MMD + squared error between the group means of each knockout in the
+                    batch (no per-cell MSE on random pairs): keeps the mean, lets cells vary
+  film_mmdmean_clr  film_mmdmean with protein normalised by CLR across cells (per protein, as Seurat's
+                    margin=2) instead of CP10k over the 4 proteins; encoders are re-pretrained
 
 Writes test_perturb.h5ad / predict.h5ad / preprocessed_*.h5ad in the run folder, so that
 02_rescore.py can score it next to NoChange / PerturbationMean.
@@ -83,11 +87,34 @@ def forward(models, rna, adt, pemb):
     return out_rna, out_adt, rna_sh, adt_sh
 
 
+def group_mean_se(pred, true, labels):
+    labels = np.asarray(labels)
+    return torch.stack([(pred[labels == p].mean(0) - true[labels == p].mean(0)).pow(2).mean()
+                        for p in np.unique(labels)]).mean()
+
+
 def recon_loss(variant, out_rna, out_adt, y_rna, y_adt, labels):
     mse = nn.functional.mse_loss(out_rna, y_rna) + nn.functional.mse_loss(out_adt, y_adt)
-    if variant != "film_mmd":
-        return mse
-    return group_mmd(out_rna, y_rna, labels) + group_mmd(out_adt, y_adt, labels) + 0.1 * mse
+    if variant == "film_mmd":
+        return group_mmd(out_rna, y_rna, labels) + group_mmd(out_adt, y_adt, labels) + 0.1 * mse
+    if variant.startswith("film_mmdmean"):
+        return (group_mmd(out_rna, y_rna, labels) + group_mmd(out_adt, y_adt, labels)
+                + group_mean_se(out_rna, y_rna, labels) + group_mean_se(out_adt, y_adt, labels))
+    return mse
+
+
+def write_clr_protein(out):
+    """Replace the CP10k protein table with CLR across cells (per protein) on the raw counts."""
+    import anndata as ad
+    raw = ad.read_h5ad(DATA / f"{NAME}_protein.h5ad")
+    pre = ad.read_h5ad(ORIG / "preprocessed_adt.h5ad")
+    x = raw[pre.obs_names].X
+    x = np.asarray(x.toarray() if hasattr(x, "toarray") else x, dtype=np.float64)
+    lx = np.log1p(x)
+    clr = np.log1p(x / np.exp(lx.mean(0, keepdims=True)))
+    import scipy.sparse as sp
+    pre.X = sp.csr_matrix(clr.astype(np.float32))
+    pre.write_h5ad(out / "preprocessed_adt.h5ad")
 
 
 def train(models, variant, tr, va, device, out, epochs, patience):
@@ -138,7 +165,8 @@ def train(models, variant, tr, va, device, out, epochs, patience):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--variant", required=True, choices=["original", "residual", "film", "film_wide", "film_mmd"])
+    ap.add_argument("--variant", required=True, choices=["original", "residual", "film", "film_wide", "film_mmd",
+                                                          "film_mmdmean", "film_mmdmean_clr"])
     ap.add_argument("--epochs", type=int, default=1000)
     ap.add_argument("--patience", type=int, default=20)
     ap.add_argument("--threads", type=int, default=6)
@@ -146,8 +174,14 @@ def main():
     torch.set_num_threads(a.threads)
     out = ROOT / "results" / f"multipert_variant_{a.variant}"
     out.mkdir(parents=True, exist_ok=True)
+    clr = a.variant.endswith("_clr")
     for f in ("preprocessed_rna.h5ad", "preprocessed_adt.h5ad", "rna_ae_pretrained.pth", "adt_ae_pretrained.pth"):
+        if clr and f.endswith(".pth"):
+            (out / f).unlink(missing_ok=True)  # protein space changed: let MultiPert re-pretrain both encoders
+            continue
         shutil.copy(ORIG / f, out / f)
+    if clr:
+        write_clr_protein(out)
 
     # identical order of random draws as MultiPert's main.py -> same pairing and split
     set_seed(1)
@@ -175,7 +209,7 @@ def main():
         models[10] = Residual(64)
     elif a.variant.startswith("film"):
         models[10] = FiLM(64)
-    if a.variant in ("film_wide", "film_mmd"):
+    if a.variant in ("film_wide", "film_mmd") or a.variant.startswith("film_mmdmean"):
         models[7] = nn.Sequential(nn.Linear(64, 32), nn.ReLU(), nn.Linear(32, adt_ctrl.shape[1]))
     train(models, a.variant, tr, va, device, out, a.epochs, a.patience)
 

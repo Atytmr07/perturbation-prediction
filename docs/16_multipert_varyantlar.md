@@ -52,3 +52,31 @@ Varyantlar arasında sadece aşağıda yazan parça değişiyor. Puanlama `02_re
 - Her varyant tek seed ile çalıştı. film_wide 37. epoch'ta erken durdu; kararsız olabilir.
 - MMD ağırlığı ve bant genişliği ayarlanmadı.
 - Protein CLR normalizasyonu ve görülmemiş knockout testi henüz yapılmadı.
+
+## Ek: ortalama + MMD kaybı ve CLR
+Log: `results/multipert_variants2.log`.
+
+**Yeni varyantlar:**
+- **film_mmdmean:** Rastgele çiftlerdeki MSE yerine, her knockout grubu için MMD + grup ortalaması kare hatası.
+- **film_mmdmean_clr:** Aynısı, ama protein CLR ile normalize edildi (her protein hücreler boyunca). Kodlayıcılar yeniden ön-eğitildi.
+
+| Varyant | Yayılım RNA / protein | RNA delta PCC | RNA MMD | Protein delta PCC | Protein yön doğruluğu | Protein MMD |
+|---|---|---|---|---|---|---|
+| original | 0 / 0 | 0,833 | 1,175 | 0,575 | 0,64 | 1,380 |
+| film_mmd | 0,27 / 0,20 | 0,647 | 0,059 | −0,056 | 0,58 | 0,140 |
+| film_mmdmean | 0,31 / 0,21 | 0,622 | 0,069 | 0,486 | 0,61 | 0,107 |
+| film_mmdmean_clr* | 0,30 / 0,23 | 0,667 | 0,062 | **0,586** | **0,83** | **0,032** |
+| PerturbationMean (CP10k / CLR*) | – | 0,861 | ~0 | 0,953 / 0,964* | 0,86 / 0,97* | ~0 |
+| NoChange (CP10k / CLR*) | – | – | 0,176 | – | – | 0,079 / 0,154* |
+
+*\*CLR varyantının protein sayıları CLR uzayında. Kendi baseline'larıyla karşılaştırılmalı, diğer varyantların protein sayılarıyla doğrudan değil.*
+
+**Yorum:**
+- **Ortalama kaybı, MMD'nin kaybettiği protein ortalamasını geri getiriyor:** protein delta PCC −0,06 → 0,49.
+- **CLR ile protein en iyi değerine ulaşıyor:**
+  - Delta PCC 0,59.
+  - Yön doğruluğu 0,83.
+  - Dağılım uzaklığı (MMD 0,032), ilk kez "hiç değişmez" baseline'ından (0,154) daha iyi.
+- **Makalenin ham PCC'si CLR'de proteinde 0,02'ye düşüyor**, oysa değişim metrikleri iyileşiyor. CLR her proteini kendi içinde merkezlediği için, proteinler arası seviye farkı ham korelasyonu artık şişiremiyor. Bu da ham PCC'nin bu seviye farklarından beslendiğini doğrudan gösteriyor.
+- **RNA ortalama değişimi orijinalin gerisinde kalıyor** (0,67'ye karşı 0,83).
+- **Hiçbir varyant `PerturbationMean`'i geçmiyor.** Bu bölmede o zaten tavan.
