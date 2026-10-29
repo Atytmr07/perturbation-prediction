@@ -1,0 +1,377 @@
+=== ATF2
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 0.9900 (best 0.8914)
+epoch 20: val 0.8806 (best 0.8308)
+epoch 30: val 0.7049 (best 0.6651)
+epoch 40: val 0.6542 (best 0.6236)
+epoch 50: val 0.6460 (best 0.5942)
+epoch 60: val 0.5731 (best 0.5660)
+epoch 70: val 0.6084 (best 0.5237)
+epoch 80: val 0.5740 (best 0.5124)
+epoch 90: val 0.5473 (best 0.5078)
+epoch 100: val 0.4877 (best 0.4877)
+epoch 110: val 0.5277 (best 0.4454)
+epoch 120: val 0.6071 (best 0.4454)
+early stop at epoch 123
+=== CAV1
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 0.9390 (best 0.8945)
+epoch 20: val 0.9861 (best 0.7868)
+epoch 30: val 0.6353 (best 0.5963)
+epoch 40: val 0.5941 (best 0.5376)
+epoch 50: val 0.7060 (best 0.5376)
+early stop at epoch 58
+=== ETV7
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 0.8070 (best 0.6564)
+epoch 20: val 1.6043 (best 0.6564)
+epoch 30: val 0.6454 (best 0.6165)
+epoch 40: val 0.7292 (best 0.4590)
+epoch 50: val 1.3096 (best 0.4401)
+epoch 60: val 0.5784 (best 0.4134)
+epoch 70: val 0.5898 (best 0.4134)
+early stop at epoch 75
+=== IFNGR1
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 0.9089 (best 0.8881)
+epoch 20: val 0.8965 (best 0.8521)
+epoch 30: val 0.6627 (best 0.6598)
+epoch 40: val 0.5942 (best 0.5894)
+epoch 50: val 0.7114 (best 0.5894)
+early stop at epoch 58
+=== IRF1
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 0.8822 (best 0.8822)
+epoch 20: val 0.9741 (best 0.8822)
+epoch 30: val 0.8351 (best 0.7239)
+epoch 40: val 0.6847 (best 0.6555)
+epoch 50: val 0.7444 (best 0.6555)
+epoch 60: val 0.7363 (best 0.6158)
+epoch 70: val 0.6397 (best 0.5500)
+epoch 80: val 0.5612 (best 0.5500)
+epoch 90: val 0.5266 (best 0.4982)
+epoch 100: val 0.5554 (best 0.4965)
+epoch 110: val 0.6128 (best 0.4956)
+epoch 120: val 0.6313 (best 0.4476)
+epoch 130: val 0.4990 (best 0.4476)
+early stop at epoch 132
+=== IRF7
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 0.8866 (best 0.8866)
+epoch 20: val 0.8281 (best 0.8281)
+epoch 30: val 0.6259 (best 0.6259)
+epoch 40: val 0.6479 (best 0.6104)
+epoch 50: val 0.6928 (best 0.6104)
+epoch 60: val 0.5413 (best 0.5413)
+epoch 70: val 0.5899 (best 0.5213)
+epoch 80: val 0.5611 (best 0.5213)
+early stop at epoch 85
+=== MARCH8
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 0.8520 (best 0.8520)
+epoch 20: val 0.9401 (best 0.8520)
+epoch 30: val 0.7015 (best 0.7013)
+epoch 40: val 0.7594 (best 0.6705)
+epoch 50: val 0.6452 (best 0.6446)
+epoch 60: val 0.5909 (best 0.5345)
+epoch 70: val 0.5568 (best 0.5203)
+epoch 80: val 0.4896 (best 0.4896)
+epoch 90: val 0.5156 (best 0.4827)
+epoch 100: val 0.4987 (best 0.4563)
+epoch 110: val 0.4837 (best 0.4106)
+epoch 120: val 0.4371 (best 0.4051)
+epoch 130: val 0.4661 (best 0.4051)
+early stop at epoch 139
+=== PDL1
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 0.7729 (best 0.7729)
+epoch 20: val 0.7315 (best 0.6929)
+epoch 30: val 0.5676 (best 0.5676)
+epoch 40: val 0.5176 (best 0.4930)
+epoch 50: val 0.5784 (best 0.4930)
+epoch 60: val 0.4704 (best 0.4366)
+epoch 70: val 0.4460 (best 0.4366)
+epoch 80: val 0.4089 (best 0.4089)
+epoch 90: val 0.4624 (best 0.3925)
+epoch 100: val 0.3702 (best 0.3702)
+epoch 110: val 0.3606 (best 0.3540)
+epoch 120: val 0.3476 (best 0.3027)
+epoch 130: val 0.3309 (best 0.3027)
+epoch 140: val 0.2866 (best 0.2866)
+epoch 150: val 0.2885 (best 0.2866)
+epoch 160: val 0.3373 (best 0.2866)
+early stop at epoch 160
+=== STAT2
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 0.9671 (best 0.9410)
+epoch 20: val 0.8415 (best 0.8415)
+epoch 30: val 0.6790 (best 0.6578)
+epoch 40: val 0.6207 (best 0.6162)
+epoch 50: val 0.6168 (best 0.5993)
+epoch 60: val 0.6183 (best 0.5484)
+epoch 70: val 0.6123 (best 0.5457)
+epoch 80: val 0.5678 (best 0.4891)
+epoch 90: val 0.5211 (best 0.4813)
+epoch 100: val 0.5043 (best 0.4813)
+early stop at epoch 109
+                       pearson_delta  mse_top20  direction_acc_top20    mmd  spread
+modality model                                                                     
+adt      LeaveOutMean          0.460      0.004                0.611  0.053     NaN
+         MultiPert             0.142      0.013                0.444  0.260   0.232
+         NoChange                NaN      0.004                0.000  0.062     NaN
+rna      LeaveOutMean          0.688      0.243                0.950  0.099     NaN
+         MultiPert             0.468      0.291                0.878  0.186   0.387
+         NoChange                NaN      0.394                0.000  0.158     NaN
+-> C:\Projects\master\pertubation-prediction\results\multipert_unseen_ko_film_mmdmean_gears

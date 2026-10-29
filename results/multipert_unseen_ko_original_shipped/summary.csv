@@ -1,0 +1,7 @@
+modality,model,pearson_delta,mse_top20,direction_acc_top20,mmd,spread
+adt,LeaveOutMean,0.46,0.004,0.611,0.053,
+adt,MultiPert,0.448,0.067,0.556,1.746,0.0
+adt,NoChange,,0.004,0.0,0.062,
+rna,LeaveOutMean,0.688,0.243,0.95,0.099,
+rna,MultiPert,0.564,0.272,0.894,1.284,0.0
+rna,NoChange,,0.394,0.0,0.158,

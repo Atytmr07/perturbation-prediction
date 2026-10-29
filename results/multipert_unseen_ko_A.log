@@ -1,0 +1,1079 @@
+=== gears ATF2
+C:\Projects\master\pertubation-prediction\.venv-models\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Found local copy...
+These perturbations are not in the GO graph and their perturbation can thus not be predicted
+[]
+Local copy of pyg dataset is detected. Loading...
+Done!
+Creating dataloaders....
+Done!
+[gears] graphs ready after 0.0 min
+Start Training...
+Epoch 1 Step 1 Train Loss: 0.4476
+Epoch 1 Step 51 Train Loss: 0.6863
+Epoch 1 Step 101 Train Loss: 0.6142
+Epoch 1 Step 151 Train Loss: 0.5276
+Epoch 1 Step 201 Train Loss: 0.6180
+Epoch 1 Step 251 Train Loss: 0.6452
+Epoch 1: Train Overall MSE: 0.0093 Validation Overall MSE: 0.0028. 
+Train Top 20 DE MSE: 0.0736 Validation Top 20 DE MSE: nan. 
+Epoch 2 Step 1 Train Loss: 0.4341
+Epoch 2 Step 51 Train Loss: 0.5029
+Epoch 2 Step 101 Train Loss: 0.4421
+Epoch 2 Step 151 Train Loss: 0.5449
+Epoch 2 Step 201 Train Loss: 0.6674
+Epoch 2 Step 251 Train Loss: 0.5267
+Epoch 2: Train Overall MSE: 0.0033 Validation Overall MSE: 0.0016. 
+Train Top 20 DE MSE: 0.0583 Validation Top 20 DE MSE: nan. 
+Epoch 3 Step 1 Train Loss: 0.6159
+Epoch 3 Step 51 Train Loss: 0.5353
+Epoch 3 Step 101 Train Loss: 0.5414
+Epoch 3 Step 151 Train Loss: 0.4989
+Epoch 3 Step 201 Train Loss: 0.6072
+Epoch 3 Step 251 Train Loss: 0.5591
+Epoch 3: Train Overall MSE: 0.0026 Validation Overall MSE: 0.0019. 
+Train Top 20 DE MSE: 0.0350 Validation Top 20 DE MSE: nan. 
+Epoch 4 Step 1 Train Loss: 0.5976
+Epoch 4 Step 51 Train Loss: 0.4925
+Epoch 4 Step 101 Train Loss: 0.4227
+Epoch 4 Step 151 Train Loss: 0.4922
+Epoch 4 Step 201 Train Loss: 0.5690
+Epoch 4 Step 251 Train Loss: 0.5331
+Epoch 4: Train Overall MSE: 0.0024 Validation Overall MSE: 0.0010. 
+Train Top 20 DE MSE: 0.0410 Validation Top 20 DE MSE: nan. 
+Epoch 5 Step 1 Train Loss: 0.5131
+Epoch 5 Step 51 Train Loss: 0.4532
+Epoch 5 Step 101 Train Loss: 0.6886
+Epoch 5 Step 151 Train Loss: 0.4577
+Epoch 5 Step 201 Train Loss: 0.5461
+Epoch 5 Step 251 Train Loss: 0.5644
+Epoch 5: Train Overall MSE: 0.0022 Validation Overall MSE: 0.0012. 
+Train Top 20 DE MSE: 0.0317 Validation Top 20 DE MSE: nan. 
+Done!
+Done! No test dataloader detected.
+[gears] 5 epochs in 42.0 min
+4004 genes, 42.0 min -> C:\Projects\master\pertubation-prediction\results\gears_embeddings\pert_embeddings_wo_ATF2.npz
+=== gears CAV1
+C:\Projects\master\pertubation-prediction\.venv-models\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Found local copy...
+Creating pyg object for each cell in the data...
+Creating dataset file...
+  0%|          | 0/9 [00:00<?, ?it/s] 11%|█         | 1/9 [00:01<00:15,  1.89s/it] 22%|██▏       | 2/9 [00:04<00:16,  2.39s/it] 33%|███▎      | 3/9 [00:07<00:14,  2.46s/it] 44%|████▍     | 4/9 [00:10<00:13,  2.78s/it] 56%|█████▌    | 5/9 [00:14<00:12,  3.22s/it] 67%|██████▋   | 6/9 [00:31<00:23,  7.84s/it] 78%|███████▊  | 7/9 [00:31<00:10,  5.47s/it] 89%|████████▉ | 8/9 [00:34<00:04,  4.47s/it]100%|██████████| 9/9 [00:43<00:00,  5.93s/it]100%|██████████| 9/9 [00:43<00:00,  4.81s/it]
+Done!
+Saving new dataset pyg object at C:\Projects\master\pertubation-prediction\data\gears_thp1\thp1g_wo_cav1\data_pyg\cell_graphs.pkl
+Done!
+These perturbations are not in the GO graph and their perturbation can thus not be predicted
+[]
+Local copy of pyg dataset is detected. Loading...
+Done!
+Creating dataloaders....
+Done!
+[gears] graphs ready after 0.2 min
+Start Training...
+Epoch 1 Step 1 Train Loss: 0.5656
+Epoch 1 Step 51 Train Loss: 0.5139
+Epoch 1 Step 101 Train Loss: 0.5352
+Epoch 1 Step 151 Train Loss: 0.4980
+Epoch 1 Step 201 Train Loss: 0.5655
+Epoch 1 Step 251 Train Loss: 0.5358
+Epoch 1: Train Overall MSE: 0.0044 Validation Overall MSE: 0.0050. 
+Train Top 20 DE MSE: 0.1529 Validation Top 20 DE MSE: nan. 
+Epoch 2 Step 1 Train Loss: 0.5035
+Epoch 2 Step 51 Train Loss: 0.5660
+Epoch 2 Step 101 Train Loss: 0.4845
+Epoch 2 Step 151 Train Loss: 0.5083
+Epoch 2 Step 201 Train Loss: 0.5596
+Epoch 2 Step 251 Train Loss: 0.5000
+Epoch 2: Train Overall MSE: 0.0030 Validation Overall MSE: 0.0014. 
+Train Top 20 DE MSE: 0.0770 Validation Top 20 DE MSE: nan. 
+Epoch 3 Step 1 Train Loss: 0.5409
+Epoch 3 Step 51 Train Loss: 0.5600
+Epoch 3 Step 101 Train Loss: 0.5051
+Epoch 3 Step 151 Train Loss: 0.5513
+Epoch 3 Step 201 Train Loss: 0.5807
+Epoch 3 Step 251 Train Loss: 0.6537
+Epoch 3: Train Overall MSE: 0.0028 Validation Overall MSE: 0.0014. 
+Train Top 20 DE MSE: 0.0279 Validation Top 20 DE MSE: nan. 
+Epoch 4 Step 1 Train Loss: 0.5247
+Epoch 4 Step 51 Train Loss: 0.5206
+Epoch 4 Step 101 Train Loss: 0.4414
+Epoch 4 Step 151 Train Loss: 0.5935
+Epoch 4 Step 201 Train Loss: 0.4685
+Epoch 4 Step 251 Train Loss: 0.4270
+Epoch 4: Train Overall MSE: 0.0024 Validation Overall MSE: 0.0006. 
+Train Top 20 DE MSE: 0.0272 Validation Top 20 DE MSE: nan. 
+Epoch 5 Step 1 Train Loss: 0.5134
+Epoch 5 Step 51 Train Loss: 0.4898
+Epoch 5 Step 101 Train Loss: 0.5043
+Epoch 5 Step 151 Train Loss: 0.4899
+Epoch 5 Step 201 Train Loss: 0.5446
+Epoch 5 Step 251 Train Loss: 0.4909
+Epoch 5: Train Overall MSE: 0.0020 Validation Overall MSE: 0.0011. 
+Train Top 20 DE MSE: 0.0178 Validation Top 20 DE MSE: nan. 
+Done!
+Done! No test dataloader detected.
+[gears] 5 epochs in 47.6 min
+4004 genes, 47.7 min -> C:\Projects\master\pertubation-prediction\results\gears_embeddings\pert_embeddings_wo_CAV1.npz
+=== gears ETV7
+C:\Projects\master\pertubation-prediction\.venv-models\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Found local copy...
+Creating pyg object for each cell in the data...
+Creating dataset file...
+  0%|          | 0/9 [00:00<?, ?it/s] 11%|█         | 1/9 [00:02<00:16,  2.08s/it] 22%|██▏       | 2/9 [00:04<00:17,  2.47s/it] 33%|███▎      | 3/9 [00:08<00:16,  2.81s/it] 44%|████▍     | 4/9 [00:10<00:14,  2.83s/it] 56%|█████▌    | 5/9 [00:12<00:09,  2.47s/it] 67%|██████▋   | 6/9 [00:14<00:06,  2.26s/it] 78%|███████▊  | 7/9 [00:14<00:03,  1.61s/it] 89%|████████▉ | 8/9 [00:15<00:01,  1.46s/it]100%|██████████| 9/9 [00:20<00:00,  2.56s/it]100%|██████████| 9/9 [00:20<00:00,  2.33s/it]
+Done!
+Saving new dataset pyg object at C:\Projects\master\pertubation-prediction\data\gears_thp1\thp1g_wo_etv7\data_pyg\cell_graphs.pkl
+Done!
+These perturbations are not in the GO graph and their perturbation can thus not be predicted
+[]
+Local copy of pyg dataset is detected. Loading...
+Done!
+Creating dataloaders....
+Done!
+[gears] graphs ready after 0.2 min
+Start Training...
+Epoch 1 Step 1 Train Loss: 0.5749
+Epoch 1 Step 51 Train Loss: 0.6037
+Epoch 1 Step 101 Train Loss: 0.6147
+Epoch 1 Step 151 Train Loss: 0.4735
+Epoch 1 Step 201 Train Loss: 0.6733
+Epoch 1: Train Overall MSE: 0.0067 Validation Overall MSE: 0.0190. 
+Train Top 20 DE MSE: 0.1227 Validation Top 20 DE MSE: nan. 
+Epoch 2 Step 1 Train Loss: 0.4146
+Epoch 2 Step 51 Train Loss: 0.5243
+Epoch 2 Step 101 Train Loss: 0.5916
+Epoch 2 Step 151 Train Loss: 0.4408
+Epoch 2 Step 201 Train Loss: 0.5865
+Epoch 2: Train Overall MSE: 0.0045 Validation Overall MSE: 0.0096. 
+Train Top 20 DE MSE: 0.1035 Validation Top 20 DE MSE: nan. 
+Epoch 3 Step 1 Train Loss: 0.5010
+Epoch 3 Step 51 Train Loss: 0.5708
+Epoch 3 Step 101 Train Loss: 0.4770
+Epoch 3 Step 151 Train Loss: 0.4909
+Epoch 3 Step 201 Train Loss: 0.5414
+Epoch 3: Train Overall MSE: 0.0035 Validation Overall MSE: 0.0060. 
+Train Top 20 DE MSE: 0.0346 Validation Top 20 DE MSE: nan. 
+Epoch 4 Step 1 Train Loss: 0.6238
+Epoch 4 Step 51 Train Loss: 0.4845
+Epoch 4 Step 101 Train Loss: 0.5121
+Epoch 4 Step 151 Train Loss: 0.5807
+Epoch 4 Step 201 Train Loss: 0.5851
+Epoch 4: Train Overall MSE: 0.0031 Validation Overall MSE: 0.0043. 
+Train Top 20 DE MSE: 0.0236 Validation Top 20 DE MSE: nan. 
+Epoch 5 Step 1 Train Loss: 0.5379
+Epoch 5 Step 51 Train Loss: 0.4887
+Epoch 5 Step 101 Train Loss: 0.4940
+Epoch 5 Step 151 Train Loss: 0.4485
+Epoch 5 Step 201 Train Loss: 0.4797
+Epoch 5: Train Overall MSE: 0.0031 Validation Overall MSE: 0.0044. 
+Train Top 20 DE MSE: 0.0307 Validation Top 20 DE MSE: nan. 
+Done!
+Done! No test dataloader detected.
+[gears] 5 epochs in 744.1 min
+4004 genes, 744.2 min -> C:\Projects\master\pertubation-prediction\results\gears_embeddings\pert_embeddings_wo_ETV7.npz
+=== gears IFNGR1
+C:\Projects\master\pertubation-prediction\.venv-models\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Found local copy...
+Creating pyg object for each cell in the data...
+Creating dataset file...
+  0%|          | 0/9 [00:00<?, ?it/s] 11%|█         | 1/9 [00:01<00:15,  1.96s/it] 22%|██▏       | 2/9 [00:04<00:17,  2.55s/it] 33%|███▎      | 3/9 [00:07<00:14,  2.48s/it] 44%|████▍     | 4/9 [00:10<00:13,  2.66s/it] 56%|█████▌    | 5/9 [00:11<00:08,  2.16s/it] 67%|██████▋   | 6/9 [00:18<00:11,  3.73s/it] 78%|███████▊  | 7/9 [00:18<00:05,  2.70s/it] 89%|████████▉ | 8/9 [00:19<00:02,  2.06s/it]100%|██████████| 9/9 [00:23<00:00,  2.58s/it]100%|██████████| 9/9 [00:23<00:00,  2.59s/it]
+Done!
+Saving new dataset pyg object at C:\Projects\master\pertubation-prediction\data\gears_thp1\thp1g_wo_ifngr1\data_pyg\cell_graphs.pkl
+Done!
+These perturbations are not in the GO graph and their perturbation can thus not be predicted
+[]
+Local copy of pyg dataset is detected. Loading...
+Done!
+Creating dataloaders....
+Done!
+[gears] graphs ready after 0.2 min
+Start Training...
+Epoch 1 Step 1 Train Loss: 0.5861
+Epoch 1 Step 51 Train Loss: 0.4866
+Epoch 1 Step 101 Train Loss: 0.5120
+Epoch 1 Step 151 Train Loss: 0.5609
+Epoch 1 Step 201 Train Loss: 0.5912
+Epoch 1 Step 251 Train Loss: 0.4911
+Epoch 1: Train Overall MSE: 0.0062 Validation Overall MSE: 0.0030. 
+Train Top 20 DE MSE: 0.0532 Validation Top 20 DE MSE: nan. 
+Epoch 2 Step 1 Train Loss: 0.4755
+Epoch 2 Step 51 Train Loss: 0.5048
+Epoch 2 Step 101 Train Loss: 0.5420
+Epoch 2 Step 151 Train Loss: 0.4929
+Epoch 2 Step 201 Train Loss: 0.5431
+Epoch 2 Step 251 Train Loss: 0.4986
+Epoch 2: Train Overall MSE: 0.0036 Validation Overall MSE: 0.0095. 
+Train Top 20 DE MSE: 0.0503 Validation Top 20 DE MSE: nan. 
+Epoch 3 Step 1 Train Loss: 0.4933
+Epoch 3 Step 51 Train Loss: 0.5084
+Epoch 3 Step 101 Train Loss: 0.4770
+Epoch 3 Step 151 Train Loss: 0.5495
+Epoch 3 Step 201 Train Loss: 0.5069
+Epoch 3 Step 251 Train Loss: 0.5699
+Epoch 3: Train Overall MSE: 0.0028 Validation Overall MSE: 0.0044. 
+Train Top 20 DE MSE: 0.0341 Validation Top 20 DE MSE: nan. 
+Epoch 4 Step 1 Train Loss: 0.5665
+Epoch 4 Step 51 Train Loss: 0.5276
+Epoch 4 Step 101 Train Loss: 0.4864
+Epoch 4 Step 151 Train Loss: 0.6697
+Epoch 4 Step 201 Train Loss: 0.6612
+Epoch 4 Step 251 Train Loss: 0.5295
+Epoch 4: Train Overall MSE: 0.0026 Validation Overall MSE: 0.0040. 
+Train Top 20 DE MSE: 0.0146 Validation Top 20 DE MSE: nan. 
+Epoch 5 Step 1 Train Loss: 0.5065
+Epoch 5 Step 51 Train Loss: 0.6557
+Epoch 5 Step 101 Train Loss: 0.5170
+Epoch 5 Step 151 Train Loss: 0.5085
+Epoch 5 Step 201 Train Loss: 0.4366
+Epoch 5 Step 251 Train Loss: 0.5192
+Epoch 5: Train Overall MSE: 0.0029 Validation Overall MSE: 0.0049. 
+Train Top 20 DE MSE: 0.0122 Validation Top 20 DE MSE: nan. 
+Done!
+Done! No test dataloader detected.
+[gears] 5 epochs in 37.2 min
+4004 genes, 37.4 min -> C:\Projects\master\pertubation-prediction\results\gears_embeddings\pert_embeddings_wo_IFNGR1.npz
+=== gears IRF1
+C:\Projects\master\pertubation-prediction\.venv-models\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Found local copy...
+Creating pyg object for each cell in the data...
+Creating dataset file...
+  0%|          | 0/9 [00:00<?, ?it/s] 11%|█         | 1/9 [00:00<00:07,  1.05it/s] 22%|██▏       | 2/9 [00:02<00:07,  1.12s/it] 33%|███▎      | 3/9 [00:03<00:06,  1.14s/it] 44%|████▍     | 4/9 [00:04<00:05,  1.20s/it] 56%|█████▌    | 5/9 [00:05<00:04,  1.00s/it] 67%|██████▋   | 6/9 [00:06<00:03,  1.05s/it] 78%|███████▊  | 7/9 [00:09<00:03,  1.77s/it] 89%|████████▉ | 8/9 [00:09<00:01,  1.24s/it]100%|██████████| 9/9 [00:10<00:00,  1.03it/s]100%|██████████| 9/9 [00:10<00:00,  1.13s/it]
+Done!
+Saving new dataset pyg object at C:\Projects\master\pertubation-prediction\data\gears_thp1\thp1g_wo_irf1\data_pyg\cell_graphs.pkl
+Done!
+These perturbations are not in the GO graph and their perturbation can thus not be predicted
+[]
+Local copy of pyg dataset is detected. Loading...
+Done!
+Creating dataloaders....
+Done!
+[gears] graphs ready after 0.1 min
+Start Training...
+Epoch 1 Step 1 Train Loss: 0.4815
+Epoch 1 Step 51 Train Loss: 0.5553
+Epoch 1 Step 101 Train Loss: 0.4958
+Epoch 1 Step 151 Train Loss: 0.5355
+Epoch 1 Step 201 Train Loss: 0.5739
+Epoch 1: Train Overall MSE: 0.0049 Validation Overall MSE: 0.0151. 
+Train Top 20 DE MSE: 0.1219 Validation Top 20 DE MSE: nan. 
+Epoch 2 Step 1 Train Loss: 0.4329
+Epoch 2 Step 51 Train Loss: 0.5014
+Epoch 2 Step 101 Train Loss: 0.5102
+Epoch 2 Step 151 Train Loss: 0.5381
+Epoch 2 Step 201 Train Loss: 0.5710
+Epoch 2: Train Overall MSE: 0.0041 Validation Overall MSE: 0.0064. 
+Train Top 20 DE MSE: 0.0540 Validation Top 20 DE MSE: nan. 
+Epoch 3 Step 1 Train Loss: 0.5209
+Epoch 3 Step 51 Train Loss: 0.5447
+Epoch 3 Step 101 Train Loss: 0.4893
+Epoch 3 Step 151 Train Loss: 0.5479
+Epoch 3 Step 201 Train Loss: 0.4575
+Epoch 3: Train Overall MSE: 0.0030 Validation Overall MSE: 0.0039. 
+Train Top 20 DE MSE: 0.0311 Validation Top 20 DE MSE: nan. 
+Epoch 4 Step 1 Train Loss: 0.5176
+Epoch 4 Step 51 Train Loss: 0.4537
+Epoch 4 Step 101 Train Loss: 0.5450
+Epoch 4 Step 151 Train Loss: 0.5208
+Epoch 4 Step 201 Train Loss: 0.5647
+Epoch 4: Train Overall MSE: 0.0029 Validation Overall MSE: 0.0049. 
+Train Top 20 DE MSE: 0.0271 Validation Top 20 DE MSE: nan. 
+Epoch 5 Step 1 Train Loss: 0.5738
+Epoch 5 Step 51 Train Loss: 0.6387
+Epoch 5 Step 101 Train Loss: 0.5111
+Epoch 5 Step 151 Train Loss: 0.3938
+Epoch 5 Step 201 Train Loss: 0.5328
+Epoch 5: Train Overall MSE: 0.0028 Validation Overall MSE: 0.0029. 
+Train Top 20 DE MSE: 0.0270 Validation Top 20 DE MSE: nan. 
+Done!
+Done! No test dataloader detected.
+[gears] 5 epochs in 27.2 min
+4004 genes, 27.3 min -> C:\Projects\master\pertubation-prediction\results\gears_embeddings\pert_embeddings_wo_IRF1.npz
+=== gears IRF7
+C:\Projects\master\pertubation-prediction\.venv-models\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Found local copy...
+Creating pyg object for each cell in the data...
+Creating dataset file...
+  0%|          | 0/9 [00:00<?, ?it/s] 11%|█         | 1/9 [00:00<00:07,  1.06it/s] 22%|██▏       | 2/9 [00:02<00:07,  1.07s/it] 33%|███▎      | 3/9 [00:03<00:07,  1.17s/it] 44%|████▍     | 4/9 [00:04<00:04,  1.04it/s] 56%|█████▌    | 5/9 [00:05<00:04,  1.01s/it] 67%|██████▋   | 6/9 [00:08<00:05,  1.68s/it] 78%|███████▊  | 7/9 [00:08<00:02,  1.29s/it] 89%|████████▉ | 8/9 [00:09<00:01,  1.01s/it]100%|██████████| 9/9 [00:10<00:00,  1.24s/it]100%|██████████| 9/9 [00:10<00:00,  1.20s/it]
+Done!
+Saving new dataset pyg object at C:\Projects\master\pertubation-prediction\data\gears_thp1\thp1g_wo_irf7\data_pyg\cell_graphs.pkl
+Done!
+These perturbations are not in the GO graph and their perturbation can thus not be predicted
+[]
+Local copy of pyg dataset is detected. Loading...
+Done!
+Creating dataloaders....
+Done!
+[gears] graphs ready after 0.1 min
+Start Training...
+Epoch 1 Step 1 Train Loss: 0.5637
+Epoch 1 Step 51 Train Loss: 0.5484
+Epoch 1 Step 101 Train Loss: 0.4574
+Epoch 1 Step 151 Train Loss: 0.6576
+Epoch 1 Step 201 Train Loss: 0.6014
+Epoch 1 Step 251 Train Loss: 0.6008
+Epoch 1: Train Overall MSE: 0.0055 Validation Overall MSE: 0.0056. 
+Train Top 20 DE MSE: 0.1080 Validation Top 20 DE MSE: nan. 
+Epoch 2 Step 1 Train Loss: 0.4627
+Epoch 2 Step 51 Train Loss: 0.5424
+Epoch 2 Step 101 Train Loss: 0.4728
+Epoch 2 Step 151 Train Loss: 0.5189
+Epoch 2 Step 201 Train Loss: 0.5659
+Epoch 2 Step 251 Train Loss: 0.5230
+Epoch 2: Train Overall MSE: 0.0040 Validation Overall MSE: 0.0050. 
+Train Top 20 DE MSE: 0.0665 Validation Top 20 DE MSE: nan. 
+Epoch 3 Step 1 Train Loss: 0.5656
+Epoch 3 Step 51 Train Loss: 0.4404
+Epoch 3 Step 101 Train Loss: 0.5515
+Epoch 3 Step 151 Train Loss: 0.5263
+Epoch 3 Step 201 Train Loss: 0.4905
+Epoch 3 Step 251 Train Loss: 0.5373
+Epoch 3: Train Overall MSE: 0.0030 Validation Overall MSE: 0.0070. 
+Train Top 20 DE MSE: 0.0413 Validation Top 20 DE MSE: nan. 
+Epoch 4 Step 1 Train Loss: 0.4535
+Epoch 4 Step 51 Train Loss: 0.5070
+Epoch 4 Step 101 Train Loss: 0.4684
+Epoch 4 Step 151 Train Loss: 0.5271
+Epoch 4 Step 201 Train Loss: 0.5192
+Epoch 4 Step 251 Train Loss: 0.4725
+Epoch 4: Train Overall MSE: 0.0025 Validation Overall MSE: 0.0039. 
+Train Top 20 DE MSE: 0.0403 Validation Top 20 DE MSE: nan. 
+Epoch 5 Step 1 Train Loss: 0.4511
+Epoch 5 Step 51 Train Loss: 0.5723
+Epoch 5 Step 101 Train Loss: 0.4940
+Epoch 5 Step 151 Train Loss: 0.5094
+Epoch 5 Step 201 Train Loss: 0.5622
+Epoch 5 Step 251 Train Loss: 0.5684
+Epoch 5: Train Overall MSE: 0.0025 Validation Overall MSE: 0.0020. 
+Train Top 20 DE MSE: 0.0337 Validation Top 20 DE MSE: nan. 
+Done!
+Done! No test dataloader detected.
+[gears] 5 epochs in 28.0 min
+4004 genes, 28.1 min -> C:\Projects\master\pertubation-prediction\results\gears_embeddings\pert_embeddings_wo_IRF7.npz
+=== gears MARCH8
+C:\Projects\master\pertubation-prediction\.venv-models\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Found local copy...
+Creating pyg object for each cell in the data...
+Creating dataset file...
+  0%|          | 0/9 [00:00<?, ?it/s] 11%|█         | 1/9 [00:00<00:07,  1.09it/s] 22%|██▏       | 2/9 [00:02<00:07,  1.09s/it] 33%|███▎      | 3/9 [00:03<00:07,  1.17s/it] 44%|████▍     | 4/9 [00:04<00:04,  1.02it/s] 56%|█████▌    | 5/9 [00:05<00:04,  1.04s/it] 67%|██████▋   | 6/9 [00:08<00:05,  1.67s/it] 78%|███████▊  | 7/9 [00:08<00:02,  1.28s/it] 89%|████████▉ | 8/9 [00:08<00:01,  1.00s/it]100%|██████████| 9/9 [00:10<00:00,  1.24s/it]100%|██████████| 9/9 [00:10<00:00,  1.20s/it]
+Done!
+Saving new dataset pyg object at C:\Projects\master\pertubation-prediction\data\gears_thp1\thp1g_wo_march8\data_pyg\cell_graphs.pkl
+Done!
+These perturbations are not in the GO graph and their perturbation can thus not be predicted
+[]
+Local copy of pyg dataset is detected. Loading...
+Done!
+Creating dataloaders....
+Done!
+[gears] graphs ready after 0.1 min
+Start Training...
+Epoch 1 Step 1 Train Loss: 0.4915
+Epoch 1 Step 51 Train Loss: 0.6526
+Epoch 1 Step 101 Train Loss: 0.5501
+Epoch 1 Step 151 Train Loss: 0.5656
+Epoch 1 Step 201 Train Loss: 0.5644
+Epoch 1 Step 251 Train Loss: 0.5370
+Epoch 1: Train Overall MSE: 0.0067 Validation Overall MSE: 0.0027. 
+Train Top 20 DE MSE: 0.1311 Validation Top 20 DE MSE: nan. 
+Epoch 2 Step 1 Train Loss: 0.4675
+Epoch 2 Step 51 Train Loss: 0.4758
+Epoch 2 Step 101 Train Loss: 0.5734
+Epoch 2 Step 151 Train Loss: 0.5335
+Epoch 2 Step 201 Train Loss: 0.6499
+Epoch 2 Step 251 Train Loss: 0.4212
+Epoch 2: Train Overall MSE: 0.0034 Validation Overall MSE: 0.0025. 
+Train Top 20 DE MSE: 0.0833 Validation Top 20 DE MSE: nan. 
+Epoch 3 Step 1 Train Loss: 0.5483
+Epoch 3 Step 51 Train Loss: 0.4242
+Epoch 3 Step 101 Train Loss: 0.5569
+Epoch 3 Step 151 Train Loss: 0.4822
+Epoch 3 Step 201 Train Loss: 0.4541
+Epoch 3 Step 251 Train Loss: 0.5447
+Epoch 3: Train Overall MSE: 0.0036 Validation Overall MSE: 0.0020. 
+Train Top 20 DE MSE: 0.0266 Validation Top 20 DE MSE: nan. 
+Epoch 4 Step 1 Train Loss: 0.6204
+Epoch 4 Step 51 Train Loss: 0.5876
+Epoch 4 Step 101 Train Loss: 0.5701
+Epoch 4 Step 151 Train Loss: 0.5783
+Epoch 4 Step 201 Train Loss: 0.5729
+Epoch 4 Step 251 Train Loss: 0.5156
+Epoch 4: Train Overall MSE: 0.0025 Validation Overall MSE: 0.0023. 
+Train Top 20 DE MSE: 0.0590 Validation Top 20 DE MSE: nan. 
+Epoch 5 Step 1 Train Loss: 0.5907
+Epoch 5 Step 51 Train Loss: 0.5237
+Epoch 5 Step 101 Train Loss: 0.4372
+Epoch 5 Step 151 Train Loss: 0.5729
+Epoch 5 Step 201 Train Loss: 0.6028
+Epoch 5 Step 251 Train Loss: 0.5771
+Epoch 5: Train Overall MSE: 0.0024 Validation Overall MSE: 0.0012. 
+Train Top 20 DE MSE: 0.0208 Validation Top 20 DE MSE: nan. 
+Done!
+Done! No test dataloader detected.
+[gears] 5 epochs in 28.6 min
+4004 genes, 28.6 min -> C:\Projects\master\pertubation-prediction\results\gears_embeddings\pert_embeddings_wo_MARCH8.npz
+=== gears PDL1
+C:\Projects\master\pertubation-prediction\.venv-models\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Found local copy...
+Creating pyg object for each cell in the data...
+Creating dataset file...
+  0%|          | 0/9 [00:00<?, ?it/s] 11%|█         | 1/9 [00:00<00:07,  1.04it/s] 22%|██▏       | 2/9 [00:02<00:07,  1.13s/it] 33%|███▎      | 3/9 [00:03<00:06,  1.16s/it] 44%|████▍     | 4/9 [00:04<00:06,  1.22s/it] 56%|█████▌    | 5/9 [00:05<00:04,  1.03s/it] 67%|██████▋   | 6/9 [00:06<00:03,  1.07s/it] 78%|███████▊  | 7/9 [00:09<00:03,  1.79s/it] 89%|████████▉ | 8/9 [00:09<00:01,  1.26s/it]100%|██████████| 9/9 [00:11<00:00,  1.38s/it]100%|██████████| 9/9 [00:11<00:00,  1.29s/it]
+Done!
+Saving new dataset pyg object at C:\Projects\master\pertubation-prediction\data\gears_thp1\thp1g_wo_cd274\data_pyg\cell_graphs.pkl
+Done!
+These perturbations are not in the GO graph and their perturbation can thus not be predicted
+[]
+Local copy of pyg dataset is detected. Loading...
+Done!
+Creating dataloaders....
+Done!
+[gears] graphs ready after 0.1 min
+Start Training...
+Epoch 1 Step 1 Train Loss: 0.6670
+Epoch 1 Step 51 Train Loss: 0.5347
+Epoch 1 Step 101 Train Loss: 0.5414
+Epoch 1 Step 151 Train Loss: 0.5662
+Epoch 1 Step 201 Train Loss: 0.5207
+Epoch 1 Step 251 Train Loss: 0.6387
+Epoch 1: Train Overall MSE: 0.0052 Validation Overall MSE: 0.0064. 
+Train Top 20 DE MSE: 0.0647 Validation Top 20 DE MSE: nan. 
+Epoch 2 Step 1 Train Loss: 0.5127
+Epoch 2 Step 51 Train Loss: 0.5321
+Epoch 2 Step 101 Train Loss: 0.5815
+Epoch 2 Step 151 Train Loss: 0.5065
+Epoch 2 Step 201 Train Loss: 0.4351
+Epoch 2 Step 251 Train Loss: 0.4667
+Epoch 2: Train Overall MSE: 0.0031 Validation Overall MSE: 0.0028. 
+Train Top 20 DE MSE: 0.0397 Validation Top 20 DE MSE: nan. 
+Epoch 3 Step 1 Train Loss: 0.5805
+Epoch 3 Step 51 Train Loss: 0.4630
+Epoch 3 Step 101 Train Loss: 0.5148
+Epoch 3 Step 151 Train Loss: 0.4716
+Epoch 3 Step 201 Train Loss: 0.5358
+Epoch 3 Step 251 Train Loss: 0.4263
+Epoch 3: Train Overall MSE: 0.0029 Validation Overall MSE: 0.0038. 
+Train Top 20 DE MSE: 0.0397 Validation Top 20 DE MSE: nan. 
+Epoch 4 Step 1 Train Loss: 0.5155
+Epoch 4 Step 51 Train Loss: 0.3998
+Epoch 4 Step 101 Train Loss: 0.4913
+Epoch 4 Step 151 Train Loss: 0.5743
+Epoch 4 Step 201 Train Loss: 0.4956
+Epoch 4 Step 251 Train Loss: 0.5704
+Epoch 4: Train Overall MSE: 0.0029 Validation Overall MSE: 0.0046. 
+Train Top 20 DE MSE: 0.0405 Validation Top 20 DE MSE: nan. 
+Epoch 5 Step 1 Train Loss: 0.5859
+Epoch 5 Step 51 Train Loss: 0.5104
+Epoch 5 Step 101 Train Loss: 0.4750
+Epoch 5 Step 151 Train Loss: 0.5129
+Epoch 5 Step 201 Train Loss: 0.4529
+Epoch 5 Step 251 Train Loss: 0.5126
+Epoch 5: Train Overall MSE: 0.0026 Validation Overall MSE: 0.0035. 
+Train Top 20 DE MSE: 0.0393 Validation Top 20 DE MSE: nan. 
+Done!
+Done! No test dataloader detected.
+[gears] 5 epochs in 33.1 min
+4004 genes, 33.1 min -> C:\Projects\master\pertubation-prediction\results\gears_embeddings\pert_embeddings_wo_CD274.npz
+=== gears STAT2
+C:\Projects\master\pertubation-prediction\.venv-models\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Found local copy...
+Creating pyg object for each cell in the data...
+Creating dataset file...
+  0%|          | 0/9 [00:00<?, ?it/s] 11%|█         | 1/9 [00:01<00:09,  1.23s/it] 22%|██▏       | 2/9 [00:02<00:08,  1.23s/it] 33%|███▎      | 3/9 [00:03<00:07,  1.28s/it] 44%|████▍     | 4/9 [00:04<00:05,  1.04s/it] 56%|█████▌    | 5/9 [00:05<00:04,  1.11s/it] 67%|██████▋   | 6/9 [00:08<00:05,  1.75s/it] 78%|███████▊  | 7/9 [00:09<00:02,  1.33s/it] 89%|████████▉ | 8/9 [00:09<00:01,  1.04s/it]100%|██████████| 9/9 [00:11<00:00,  1.20s/it]100%|██████████| 9/9 [00:11<00:00,  1.24s/it]
+Done!
+Saving new dataset pyg object at C:\Projects\master\pertubation-prediction\data\gears_thp1\thp1g_wo_stat2\data_pyg\cell_graphs.pkl
+Done!
+These perturbations are not in the GO graph and their perturbation can thus not be predicted
+[]
+Local copy of pyg dataset is detected. Loading...
+Done!
+Creating dataloaders....
+Done!
+[gears] graphs ready after 0.1 min
+Start Training...
+Epoch 1 Step 1 Train Loss: 0.5615
+Epoch 1 Step 51 Train Loss: 0.5785
+Epoch 1 Step 101 Train Loss: 0.5528
+Epoch 1 Step 151 Train Loss: 0.5080
+Epoch 1 Step 201 Train Loss: 0.5843
+Epoch 1 Step 251 Train Loss: 0.5037
+Epoch 1: Train Overall MSE: 0.0048 Validation Overall MSE: 0.0032. 
+Train Top 20 DE MSE: 0.0601 Validation Top 20 DE MSE: nan. 
+Epoch 2 Step 1 Train Loss: 0.5803
+Epoch 2 Step 51 Train Loss: 0.5165
+Epoch 2 Step 101 Train Loss: 0.5596
+Epoch 2 Step 151 Train Loss: 0.5593
+Epoch 2 Step 201 Train Loss: 0.5307
+Epoch 2 Step 251 Train Loss: 0.5839
+Epoch 2: Train Overall MSE: 0.0033 Validation Overall MSE: 0.0014. 
+Train Top 20 DE MSE: 0.0702 Validation Top 20 DE MSE: nan. 
+Epoch 3 Step 1 Train Loss: 0.5267
+Epoch 3 Step 51 Train Loss: 0.5903
+Epoch 3 Step 101 Train Loss: 0.5163
+Epoch 3 Step 151 Train Loss: 0.4976
+Epoch 3 Step 201 Train Loss: 0.5573
+Epoch 3 Step 251 Train Loss: 0.5326
+Epoch 3: Train Overall MSE: 0.0025 Validation Overall MSE: 0.0005. 
+Train Top 20 DE MSE: 0.0536 Validation Top 20 DE MSE: nan. 
+Epoch 4 Step 1 Train Loss: 0.4805
+Epoch 4 Step 51 Train Loss: 0.5049
+Epoch 4 Step 101 Train Loss: 0.5978
+Epoch 4 Step 151 Train Loss: 0.4925
+Epoch 4 Step 201 Train Loss: 0.4868
+Epoch 4 Step 251 Train Loss: 0.5032
+Epoch 4: Train Overall MSE: 0.0020 Validation Overall MSE: 0.0007. 
+Train Top 20 DE MSE: 0.0414 Validation Top 20 DE MSE: nan. 
+Epoch 5 Step 1 Train Loss: 0.5350
+Epoch 5 Step 51 Train Loss: 0.6401
+Epoch 5 Step 101 Train Loss: 0.5124
+Epoch 5 Step 151 Train Loss: 0.5880
+Epoch 5 Step 201 Train Loss: 0.6328
+Epoch 5 Step 251 Train Loss: 0.6078
+Epoch 5: Train Overall MSE: 0.0020 Validation Overall MSE: 0.0006. 
+Train Top 20 DE MSE: 0.0305 Validation Top 20 DE MSE: nan. 
+Done!
+Done! No test dataloader detected.
+[gears] 5 epochs in 31.1 min
+4004 genes, 31.1 min -> C:\Projects\master\pertubation-prediction\results\gears_embeddings\pert_embeddings_wo_STAT2.npz
+=== multipert original gears
+=== ATF2
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 56.1093 (best 56.1093)
+epoch 20: val 43.1445 (best 43.1445)
+epoch 30: val 30.1378 (best 30.1378)
+epoch 40: val 17.7388 (best 17.7388)
+epoch 50: val 8.0054 (best 8.0054)
+epoch 60: val 2.4756 (best 2.4756)
+epoch 70: val 0.5963 (best 0.5963)
+epoch 80: val 0.2110 (best 0.2110)
+epoch 90: val 0.1619 (best 0.1619)
+epoch 100: val 0.1578 (best 0.1573)
+epoch 110: val 0.1582 (best 0.1554)
+epoch 120: val 0.1564 (best 0.1554)
+early stop at epoch 129
+=== CAV1
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 54.9525 (best 54.9525)
+epoch 20: val 40.5519 (best 40.5519)
+epoch 30: val 26.2695 (best 26.2695)
+epoch 40: val 13.4425 (best 13.4425)
+epoch 50: val 4.6903 (best 4.6903)
+epoch 60: val 1.0591 (best 1.0591)
+epoch 70: val 0.2639 (best 0.2639)
+epoch 80: val 0.1620 (best 0.1620)
+epoch 90: val 0.1532 (best 0.1532)
+epoch 100: val 0.1524 (best 0.1524)
+epoch 110: val 0.1541 (best 0.1524)
+epoch 120: val 0.1532 (best 0.1524)
+early stop at epoch 120
+=== ETV7
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 57.3437 (best 57.3437)
+epoch 20: val 45.8062 (best 45.8062)
+epoch 30: val 34.2258 (best 34.2258)
+epoch 40: val 22.4339 (best 22.4339)
+epoch 50: val 12.3434 (best 12.3434)
+epoch 60: val 5.2030 (best 5.2030)
+epoch 70: val 1.6396 (best 1.6396)
+epoch 80: val 0.4377 (best 0.4377)
+epoch 90: val 0.2169 (best 0.2139)
+epoch 100: val 0.1843 (best 0.1698)
+epoch 110: val 0.1585 (best 0.1577)
+epoch 120: val 0.1609 (best 0.1561)
+epoch 130: val 0.1800 (best 0.1561)
+early stop at epoch 136
+=== IFNGR1
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 56.0758 (best 56.0758)
+epoch 20: val 43.0685 (best 43.0685)
+epoch 30: val 30.0788 (best 30.0788)
+epoch 40: val 17.7093 (best 17.7093)
+epoch 50: val 8.0361 (best 8.0361)
+epoch 60: val 2.4949 (best 2.4949)
+epoch 70: val 0.6027 (best 0.6027)
+epoch 80: val 0.2114 (best 0.2114)
+epoch 90: val 0.1630 (best 0.1628)
+epoch 100: val 0.1574 (best 0.1557)
+epoch 110: val 0.1598 (best 0.1557)
+epoch 120: val 0.1561 (best 0.1552)
+epoch 130: val 0.1587 (best 0.1552)
+early stop at epoch 137
+=== IRF1
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 56.1644 (best 56.1644)
+epoch 20: val 43.1846 (best 43.1846)
+epoch 30: val 30.1806 (best 30.1806)
+epoch 40: val 17.7816 (best 17.7816)
+epoch 50: val 8.0316 (best 8.0316)
+epoch 60: val 2.4868 (best 2.4868)
+epoch 70: val 0.6276 (best 0.6276)
+epoch 80: val 0.2200 (best 0.2200)
+epoch 90: val 0.1696 (best 0.1696)
+epoch 100: val 0.1688 (best 0.1662)
+epoch 110: val 0.1655 (best 0.1643)
+epoch 120: val 0.1819 (best 0.1643)
+early stop at epoch 121
+=== IRF7
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 56.1472 (best 56.1472)
+epoch 20: val 43.2117 (best 43.2117)
+epoch 30: val 30.2154 (best 30.2154)
+epoch 40: val 17.8087 (best 17.8087)
+epoch 50: val 8.0513 (best 8.0513)
+epoch 60: val 2.4977 (best 2.4977)
+epoch 70: val 0.6032 (best 0.6032)
+epoch 80: val 0.2125 (best 0.2125)
+epoch 90: val 0.1631 (best 0.1631)
+epoch 100: val 0.1601 (best 0.1583)
+epoch 110: val 0.1579 (best 0.1572)
+epoch 120: val 0.1590 (best 0.1572)
+early stop at epoch 123
+=== MARCH8
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 56.1132 (best 56.1132)
+epoch 20: val 43.1305 (best 43.1305)
+epoch 30: val 30.1624 (best 30.1624)
+epoch 40: val 17.7077 (best 17.7077)
+epoch 50: val 8.0256 (best 8.0256)
+epoch 60: val 2.4782 (best 2.4782)
+epoch 70: val 0.5960 (best 0.5960)
+epoch 80: val 0.2110 (best 0.2110)
+epoch 90: val 0.1609 (best 0.1609)
+epoch 100: val 0.1610 (best 0.1566)
+epoch 110: val 0.1569 (best 0.1566)
+epoch 120: val 0.1600 (best 0.1554)
+epoch 130: val 0.1570 (best 0.1554)
+early stop at epoch 133
+=== PDL1
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 54.9251 (best 54.9251)
+epoch 20: val 40.5321 (best 40.5321)
+epoch 30: val 26.2844 (best 26.2844)
+epoch 40: val 13.4620 (best 13.4620)
+epoch 50: val 4.7056 (best 4.7056)
+epoch 60: val 1.0790 (best 1.0790)
+epoch 70: val 0.2715 (best 0.2715)
+epoch 80: val 0.1760 (best 0.1760)
+epoch 90: val 0.1649 (best 0.1628)
+epoch 100: val 0.1630 (best 0.1622)
+epoch 110: val 0.1630 (best 0.1620)
+epoch 120: val 0.1632 (best 0.1620)
+epoch 130: val 0.1628 (best 0.1618)
+epoch 140: val 0.1694 (best 0.1618)
+early stop at epoch 145
+=== STAT2
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 56.1740 (best 56.1740)
+epoch 20: val 43.1696 (best 43.1696)
+epoch 30: val 30.1712 (best 30.1712)
+epoch 40: val 17.7546 (best 17.7546)
+epoch 50: val 8.0411 (best 8.0411)
+epoch 60: val 2.4959 (best 2.4959)
+epoch 70: val 0.6027 (best 0.6027)
+epoch 80: val 0.2142 (best 0.2142)
+epoch 90: val 0.1663 (best 0.1663)
+epoch 100: val 0.1598 (best 0.1596)
+epoch 110: val 0.1609 (best 0.1594)
+epoch 120: val 0.1689 (best 0.1589)
+epoch 130: val 0.1703 (best 0.1589)
+early stop at epoch 138
+                       pearson_delta  mse_top20  direction_acc_top20    mmd  spread
+modality model                                                                     
+adt      LeaveOutMean          0.460      0.004                0.611  0.053     NaN
+         MultiPert             0.387      0.099                0.556  1.673     0.0
+         NoChange                NaN      0.004                0.000  0.062     NaN
+rna      LeaveOutMean          0.688      0.243                0.950  0.099     NaN
+         MultiPert             0.583      0.265                0.933  1.268     0.0
+         NoChange                NaN      0.394                0.000  0.158     NaN
+-> C:\Projects\master\pertubation-prediction\results\multipert_unseen_ko_original_gears
+=== multipert film_mmdmean gears
+=== ATF2
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 0.9369 (best 0.8942)
+epoch 20: val 0.8972 (best 0.8547)
+epoch 30: val 0.6806 (best 0.6774)
+epoch 40: val 0.6459 (best 0.6176)
+epoch 50: val 0.6268 (best 0.5953)
+epoch 60: val 0.5644 (best 0.5644)
+epoch 70: val 0.5630 (best 0.5152)
+epoch 80: val 0.5483 (best 0.5075)
+epoch 90: val 0.5057 (best 0.4819)
+epoch 100: val 0.4580 (best 0.4580)
+epoch 110: val 0.4860 (best 0.4224)
+epoch 120: val 0.5945 (best 0.4224)
+epoch 130: val 0.4592 (best 0.3936)
+epoch 140: val 0.3813 (best 0.3742)
+epoch 150: val 0.4303 (best 0.3742)
+early stop at epoch 155
+=== CAV1
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+epoch 10: val 0.9364 (best 0.8960)
+epoch 20: val 0.9820 (best 0.7902)
+epoch 30: val 0.6421 (best 0.6037)
+epoch 40: val 0.6860 (best 0.5932)
+epoch 50: val 0.6240 (best 0.5303)
+epoch 60: val 0.6027 (best 0.5303)
+early stop at epoch 65
+=== ETV7
+Successfully loaded preprocessed data...
+RNA Control:
+View of AnnData object with n_obs × n_vars = 2009 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+RNA Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 5000
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'ensembl_id', 'ncounts', 'ncells', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'
+    uns: 'hvg', 'log1p'
+    layers: None (.X)
+
+ADT Control:
+View of AnnData object with n_obs × n_vars = 2009 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+
+ADT Perturbed:
+View of AnnData object with n_obs × n_vars = 6971 × 4
+    obs: 'perturbation', 'hto', 'guide_id', 'hto_barcode', 'gdo_barcode', 'tissue_type', 'cell_line', 'cancer', 'disease', 'perturbation_type', 'celltype', 'organism', 'nperts', 'ngenes', 'ncounts', 'percent_mito', 'percent_ribo'
+    var: 'adt_barcode', 'ncounts', 'ncells'
+    uns: 'log1p'
+    layers: None (.X)
+Loading pre-trained RNA and ADT autoencoders...
+Traceback (most recent call last):
+  File "C:\Projects\master\pertubation-prediction\scripts\multipert\09_unseen_knockout.py", line 139, in <module>
+    main()
+    ~~~~^^
+  File "C:\Projects\master\pertubation-prediction\scripts\multipert\09_unseen_knockout.py", line 128, in main
+    rows += run_fold(k, a, out)
+            ~~~~~~~~^^^^^^^^^^^
+  File "C:\Projects\master\pertubation-prediction\scripts\multipert\09_unseen_knockout.py", line 84, in run_fold
+    v07.train(models, a.variant, tr, va, torch.device("cpu"), fold, a.epochs, a.patience)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\master\pertubation-prediction\scripts\multipert\07_variants.py", line 151, in train
+    vl.append(recon_loss(variant, out_rna, out_adt, y_rna, y_adt, lab).item())
+              ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\master\pertubation-prediction\scripts\multipert\07_variants.py", line 101, in recon_loss
+    return (group_mmd(out_rna, y_rna, labels) + group_mmd(out_adt, y_adt, labels)
+            ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\master\pertubation-prediction\scripts\multipert\07_variants.py", line 76, in group_mmd
+    return torch.stack(terms).mean()
+           ~~~~~~~~~~~^^^^^^^
+RuntimeError: stack expects a non-empty TensorList

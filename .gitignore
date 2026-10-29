@@ -17,3 +17,5 @@ results/multipert_covid_*/fold_*/*.pth
 results/multipert_covid_*/fold_*/multipert_predictions.csv
 results/multipert_variant_*/*.h5ad
 results/multipert_variant_*/*.pth
+results/multipert_unseen_ko_*/fold_*/*.h5ad
+results/multipert_unseen_ko_*/fold_*/*.pth

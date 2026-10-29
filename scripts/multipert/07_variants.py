@@ -73,7 +73,7 @@ def mmd(x, y):
 def group_mmd(pred, true, labels):
     labels = np.asarray(labels)
     terms = [mmd(pred[labels == p], true[labels == p]) for p in np.unique(labels) if (labels == p).sum() >= 4]
-    return torch.stack(terms).mean()
+    return torch.stack(terms).mean() if terms else pred.sum() * 0  # small last batch: no group with >= 4 cells
 
 
 def forward(models, rna, adt, pemb):
