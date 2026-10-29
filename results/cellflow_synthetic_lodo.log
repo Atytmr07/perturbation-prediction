@@ -1,0 +1,25 @@
+[donor0] trained 50000 it in 9.3 min
+[donor1] trained 50000 it in 9.4 min
+[donor2] trained 50000 it in 9.9 min
+[donor3] trained 50000 it in 9.9 min
+[donor4] trained 50000 it in 9.9 min
+[donor5] trained 50000 it in 9.7 min
+[donor6] trained 50000 it in 9.7 min
+[donor7] trained 50000 it in 9.8 min
+                           pearson_delta  mse_top20  direction_acc_top20    mmd  energy
+modality model                                                                         
+atac     CellFlow                  0.811      0.471                0.932  0.244   2.122
+         ContextRidge              0.846      0.670                0.927    NaN     NaN
+         NoChange                    NaN      3.538                0.000  0.895   9.773
+         PCAOracle                 0.976      0.007                1.000    NaN     NaN
+         PerturbationMean          0.816      1.044                0.919    NaN     NaN
+protein  CellFlow                  0.778      0.297                0.775  0.244   2.122
+         ContextRidge              0.862      0.274                0.681    NaN     NaN
+         NoChange                    NaN      1.772                0.000  0.895   9.773
+         PCAOracle                 0.900      0.104                0.899    NaN     NaN
+         PerturbationMean          0.848      0.414                0.672    NaN     NaN
+rna      CellFlow                  0.809      1.001                0.953  0.244   2.122
+         ContextRidge              0.890      1.351                0.955    NaN     NaN
+         NoChange                    NaN      8.611                0.000  0.895   9.773
+         PCAOracle                 0.946      0.081                0.999    NaN     NaN
+         PerturbationMean          0.863      2.143                0.950    NaN     NaN

@@ -19,3 +19,4 @@ results/multipert_variant_*/*.h5ad
 results/multipert_variant_*/*.pth
 results/multipert_unseen_ko_*/fold_*/*.h5ad
 results/multipert_unseen_ko_*/fold_*/*.pth
+.venv-cellflow/
