@@ -1,9 +1,9 @@
-"""Zhang vd. 2023 COVID aşı verisini Zenodo'dan indir (kayıt 7555405, CC-BY-4.0).
+"""Download the Zhang et al. 2023 COVID vaccine data from Zenodo (record 7555405, CC-BY-4.0).
 
-    python scripts/covid/01_download.py              # CITE + ASAP Seurat nesneleri (~6.3 GB)
-    python scripts/covid/01_download.py --fragments  # + ASAP fragments (~12.4 GB, peak çağırmak için)
+    python scripts/covid/01_download.py              # CITE + ASAP Seurat objects (~6.3 GB)
+    python scripts/covid/01_download.py --fragments  # + ASAP fragments (~12.4 GB, for peak calling)
 
-Yarım kalan indirmeler kaldığı yerden devam eder; MD5 Zenodo API'siyle doğrulanır.
+Interrupted downloads resume; MD5 is checked against the Zenodo API.
 """
 
 from __future__ import annotations
@@ -56,7 +56,7 @@ def main():
         fetch(f["links"]["self"], dest, f["size"])
         want = f["checksum"].split(":", 1)[1]
         got = md5(dest)
-        print("  md5", "OK" if got == want else f"HATALI ({got} != {want}); dosyayı silip tekrar çalıştırın")
+        print("  md5", "OK" if got == want else f"MISMATCH ({got} != {want}); delete the file and rerun")
 
 
 if __name__ == "__main__":

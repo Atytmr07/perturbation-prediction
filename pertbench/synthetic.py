@@ -10,6 +10,8 @@ before spending compute on real data. The generative story:
                 AND modulates program sensitivity (1 + B z_d). The second part is
                 a donor x perturbation interaction that no additive model captures,
                 but which is partly recoverable from the donor's control profile.
+                With donor_nonlinear > 0, sensitivity also gets a quadratic term in z_d,
+                which a model linear in the control profile cannot represent.
   protein       linear readout of a subset of genes + a protein-only effect of some
                 perturbations (post-transcriptional), so RNA alone is not sufficient.
   atac          separate program loadings; chromatin shift is ~ program effect.
@@ -34,6 +36,7 @@ def make_synthetic(
     donor_dim: int = 3,
     cells_per_condition: int = 30,
     donor_interaction: float = 0.6,
+    donor_nonlinear: float = 0.0,
     protein_only_frac: float = 0.3,
     noise: float = 0.4,
     seed: int = 0,
@@ -53,6 +56,9 @@ def make_synthetic(
     C = rng.normal(0, 0.3, (donor_dim, G))
     B = rng.normal(0, donor_interaction / np.sqrt(donor_dim), (K, donor_dim))
     donor_sens = 1.0 + z @ B.T                               # (n_donors, K)
+    if donor_nonlinear > 0:  # drawn only here, so default data stay identical
+        B2 = rng.normal(0, 1 / np.sqrt(donor_dim), (K, donor_dim))
+        donor_sens = donor_sens + donor_nonlinear * ((z @ B2.T) ** 2 - 1.0)
 
     in_program = np.flatnonzero((W != 0).sum(axis=0) > 0)
     targets = rng.choice(in_program, n_perts, replace=False)

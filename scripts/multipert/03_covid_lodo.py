@@ -203,7 +203,7 @@ def main():
         n_val = int(0.15 * len(ds))
         tr_loader = DataLoader(torch.utils.data.Subset(ds, perm[n_val:]), batch_size=512, shuffle=True)
         va_loader = DataLoader(torch.utils.data.Subset(ds, perm[:n_val]), batch_size=512)
-        print(f"[{d}] {len(ds)} çift ({a.pairing} eşleşme), {len(genes)} gen, {len(adt_names)} protein", flush=True)
+        print(f"[{d}] {len(ds)} pairs ({a.pairing} pairing), {len(genes)} genes, {len(adt_names)} proteins", flush=True)
 
         models = initialize_models(tr_loader, len(genes), len(adt_names), EMB_DIM, device, str(fold))
         train_and_validate(models, tr_loader, va_loader, device, str(fold), epochs=a.epochs, patience=a.patience)
@@ -260,7 +260,7 @@ def main():
     json.dump(timing, open(out / "timing_min.json", "w"), indent=2)
     with pd.option_context("display.width", 200):
         print(summ.to_string())
-        print("\nDağılım (RNA PCA, ortalama):\n", dist.drop(columns=KEYS).mean().round(3).to_string())
+        print("\nDistribution (RNA PCA, mean):\n", dist.drop(columns=KEYS).mean().round(3).to_string())
     print(f"\n-> {out}")
 
 

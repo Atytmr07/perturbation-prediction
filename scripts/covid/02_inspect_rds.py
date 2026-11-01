@@ -1,11 +1,11 @@
-"""Seurat .rds dosyasının içini R olmadan listele: assay'ler, katmanlar, metadata sütunları.
+"""List the contents of a Seurat .rds file without R: assays, layers, metadata columns.
 
     python scripts/covid/02_inspect_rds.py data/covid/PBMC_vaccine_CITE.rds
     python scripts/covid/02_inspect_rds.py data/covid/PBMC_vaccine_ASAP.rds
 
-Çıktı data/covid/<ad>.inspect.json dosyasına da yazılır. 03_convert.py'deki sütun adlarını
-(donör, gün, hücre tipi) buna bakarak seçin. Büyük dosyada okuma birkaç dakika ve
-dosya boyutunun ~3-4 katı RAM ister.
+The output is also written to data/covid/<name>.inspect.json; use it to pick the column names
+(donor, day, cell type) for the config. Reading a large file takes a few minutes and
+~3-4x the file size in RAM.
 """
 
 from __future__ import annotations

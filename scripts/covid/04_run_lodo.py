@@ -1,10 +1,10 @@
-"""COVID aşı verisinde leave-one-donor-out baseline'ları: 5 donörle eğit, 6. donörün gün 0'ından
-gün 2/10/28 profilini (RNA, ADT, ATAC) tahmin et.
+"""Leave-one-donor-out baselines on the COVID vaccine data: train on 5 donors, predict the 6th
+donor's day 2/10/28 profile (RNA, ADT, ATAC) from its day 0.
 
     python scripts/covid/04_run_lodo.py --config scripts/covid/config.json
-    python scripts/covid/04_run_lodo.py --config scripts/covid/config.json --strict   # özellik seçimi fold içinde
+    python scripts/covid/04_run_lodo.py --config scripts/covid/config.json --strict   # feature selection inside each fold
 
-config.json örneği için scripts/covid/config.example.json'a bakın (sütun adları 02_inspect_rds.py çıktısından).
+See scripts/covid/config.example.json for the config format (column names from 02_inspect_rds.py).
 """
 
 from __future__ import annotations
@@ -36,7 +36,7 @@ def main():
 
     ct = load()
     donors = sorted(ct.obs["donor"].unique())
-    print(f"[covid] {len(ct.obs)} koşul | donörler {donors} | modaliteler "
+    print(f"[covid] {len(ct.obs)} conditions | donors {donors} | modalities "
           + ", ".join(f"{m}:{v.shape[1]}" for m, v in ct.means.items()))
     print(ct.obs.groupby(["perturbation"])["n_cells"].describe()[["count", "min", "50%"]])
 
@@ -48,7 +48,7 @@ def main():
             df = evaluate_split(model, fold_ct, split)
             df["split_family"] = "unseen_donor"
             frames.append(df)
-        print(f"[covid] fold donör={d} bitti")
+        print(f"[covid] fold donor={d} done")
     res = pd.concat(frames, ignore_index=True)
 
     out = Path(a.out)
@@ -61,8 +61,8 @@ def main():
     skill = skill_vs_baseline(res)
     with pd.option_context("display.width", 220, "display.max_columns", 20):
         print(summ.to_string(index=False))
-        print("\nGün bazında top-20 MSE:\n", by_day.to_string())
-        print("\nPerturbationMean'e göre skill (>0 daha iyi):\n", skill.to_string())
+        print("\nTop-20 MSE by day:\n", by_day.to_string())
+        print("\nSkill vs PerturbationMean (>0 is better):\n", skill.to_string())
     print(f"\n-> {out}")
 
 

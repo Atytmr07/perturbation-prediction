@@ -15,6 +15,7 @@ metrics on pseudobulk means, plus MMD / energy distance on cells in the PCA spac
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 import time
 from pathlib import Path
@@ -134,6 +135,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--donors", nargs="*", default=None, help="default: all donors")
     ap.add_argument("--n-donors", type=int, default=8)
+    ap.add_argument("--n-perts", type=int, default=30)
+    ap.add_argument("--nonlinear", type=float, default=0.0, help="donor_nonlinear of make_synthetic")
+    ap.add_argument("--data-seed", type=int, default=0)
     ap.add_argument("--n-pcs", type=int, default=30)
     ap.add_argument("--width", type=int, default=256)
     ap.add_argument("--iterations", type=int, default=5000)
@@ -141,16 +145,31 @@ def main():
     ap.add_argument("--lr", type=float, default=1e-4)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out", default="results/cellflow_synthetic_lodo")
+    ap.add_argument("--cores", type=int, default=0, help="if > 0: pin to this many CPUs at low priority")
     a = ap.parse_args()
+    if a.cores > 0:  # keep the machine usable while training
+        import psutil
+        p = psutil.Process()
+        p.cpu_affinity(list(range(a.cores)))
+        p.nice(psutil.BELOW_NORMAL_PRIORITY_CLASS if sys.platform == "win32" else 10)
 
-    data = make_synthetic(n_donors=a.n_donors, seed=0)
+    data = make_synthetic(n_donors=a.n_donors, n_perts=a.n_perts, donor_nonlinear=a.nonlinear, seed=a.data_seed)
     donors = a.donors or sorted(data.obs["donor"].unique())
-    rows = []
-    for d in donors:
-        rows += run_fold(data, d, a)
-    res = pd.DataFrame(rows)
     out = ROOT / a.out
-    out.mkdir(parents=True, exist_ok=True)
+    (out / "folds").mkdir(parents=True, exist_ok=True)
+    deadline, last = float(os.environ.get("SWEEP_DEADLINE", "inf")), 0.0
+    for d in donors:  # one file per fold, so an interrupted run resumes where it stopped
+        f = out / "folds" / f"{d}.csv"
+        if f.exists():
+            print(f"[{d}] done earlier, skipped", flush=True)
+            continue
+        if time.time() + last > deadline:  # next fold would not finish before SWEEP_DEADLINE
+            print(f"[{d}] deadline reached, stopping", flush=True)
+            break
+        t0 = time.time()
+        pd.DataFrame(run_fold(data, d, a)).to_csv(f, index=False)
+        last = time.time() - t0
+    res = pd.concat([pd.read_csv(f) for f in sorted((out / "folds").glob("*.csv"))], ignore_index=True)
     res.to_csv(out / "per_condition.csv", index=False)
     cols = ["pearson_delta", "mse_top20", "direction_acc_top20", "mmd", "energy"]
     cols = [c for c in cols if c in res]

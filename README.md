@@ -1,56 +1,54 @@
-# pertubation-prediction
+# perturbation-prediction
 
-Bitirme projesi: donör-farkında, çok modaliteli tek hücre perturbation cevabı tahmini.
+Donor-aware multimodal single-cell perturbation response prediction: predict how a **previously unseen donor** responds to a perturbation in several modalities (RNA, ATAC, surface protein), using only that donor's untreated cells. Evaluation is leave-one-donor-out against a `PerturbationMean` baseline.
 
-| Klasör | İçerik |
+Results so far: [RESULTS.md](RESULTS.md) · COVID baseline table: [results/LEADERBOARD.md](results/LEADERBOARD.md)
+
+## Layout
+
+| Path | Content |
 |---|---|
-| `docs/01_literatur_taramasi.md` | MultiPert, MultiFlow ve alanın haritası; boşluklar |
-| `docs/02_veri_setleri.md` | Multimodal ve çok donörlü veri setleri, erişim |
-| `docs/03_arastirma_plani.md` | Problem tanımı, araştırma soruları, ön sonuçlar, takvim |
-| `docs/04_hocaya_email_taslagi.md` | Hilal Hoca'ya yanıt taslağı |
-| `pertbench/` | Benchmark paketi |
-| `scripts/` | Veri indirme ve benchmark çalıştırma |
-| `results/` | Özet tablolar (`summary.csv`, `skill_vs_PerturbationMean.csv`) |
+| `pertbench/` | Benchmark package: pseudobulk condition tables, splits (unseen donor / perturbation / cell type), delta metrics, baselines (`NoChange`, `PerturbationMean`, `Additive`, `ContextKNN`, `ContextRidge`, ...), synthetic multi-donor data |
+| `scripts/covid/` | COVID vaccine data (Zhang et al. 2023, Zenodo 7555405): download, inspect and convert Seurat `.rds` without R, LODO baselines |
+| `scripts/multipert/` | MultiPert: original run, rescoring, COVID LODO, attention check, variants, unseen-knockout test |
+| `scripts/cellflow/` | CellFlow: LODO on synthetic data, seed / setting sweep, aggregation |
+| `scripts/run_benchmark.py`, `scripts/download_data.py` | pertbench on public perturbation datasets (scPerturb) |
+| `results/` | Summary tables |
+| `tests/` | pytest |
 
-## Kurulum
+External code (`external/MultiPert`, `external/cellflow`) and data (`data/`) are not tracked.
+
+## Setup
 
 ```bash
 python -m venv .venv
 .venv/Scripts/python -m pip install -r requirements.txt
-```
-
-## Çalıştırma
-
-```bash
+.venv/Scripts/python -m pip install git+https://github.com/cellgeni/py8rds.git   # read Seurat .rds files
 .venv/Scripts/python -m pytest -q tests
-.venv/Scripts/python scripts/run_benchmark.py --dataset synthetic
-.venv/Scripts/python scripts/download_data.py papalexi2021 frangieh2021_protein
-.venv/Scripts/python scripts/run_benchmark.py --dataset papalexi2021
-.venv/Scripts/python scripts/run_benchmark.py --dataset frangieh2021_protein --min-cells 20
 ```
 
-Kendi h5ad dosyanız için:
+CellFlow needs Python 3.11 and its own environment:
+
 ```bash
-.venv/Scripts/python scripts/run_benchmark.py --dataset h5ad --path data/x.h5ad --pert-key perturbation --control control --donor-key donor --cell-type-key cell_type
+git clone https://github.com/theislab/cellflow external/cellflow
+uv venv .venv-cellflow --python 3.11
+uv pip install --python .venv-cellflow -e external/cellflow requests pytest
 ```
 
-## pertbench tasarımı
-- **Veri:** `PerturbData` hücre düzeyinde her modalite için bir matris tutar. `pseudobulk()` bunu `(perturbation, cell_type, donor)` koşullarının ortalamalarına indirger. Modeller bu düzeyde çalışıyor. GEARS, Ahlmann-Eltze ve OP3 de değerlendirmeyi bu düzeyde yapıyor.
-- **Split'ler (`splits.py`):**
-  - `random`
-  - `unseen_perturbation`
-  - `unseen_cell_type` (LOO)
-  - `unseen_donor` (LOO, `k_shot` destekli)
+## Running
 
-  Kontroller her zaman eğitimde kalıyor. Yeni bir hastanın baseline örneğinin elimizde olduğunu varsayıyoruz.
-- **Metrikler (`metrics.py`):** `pearson_delta`, `pearson_delta_top20`, `mse_top20`, `direction_acc_top20`, `cosine_delta`. Ham `pearson` yalnızca referans için raporlanıyor.
-- **Modeller (`models.py`):** NoChange, GlobalMean, PerturbationMean, Additive, ContextKNN, ContextRidge, LinearEmbedding, CrossModal. Açıklamaları dosyanın başında.
-- **Harici modeller (`external.py`):**
-  1. `export_split` bir split'i hücre düzeyinde h5ad olarak yazar.
-  2. Harici model kendi ortamında eğitilir ve tahminlerini CSV'ye yazar.
-  3. `ExternalPredictions` bu CSV'yi okur ve aynı koddan geçirerek skorlar.
-- **Sentetik veri (`synthetic.py`):** Bilinen bir donör × perturbation etkileşimi ve yalnızca proteinde görülen etkiler içerir. Modellerin bu sinyalleri yakalayıp yakalamadığını test etmeye yarar.
+```bash
+# pertbench baselines
+.venv/Scripts/python scripts/run_benchmark.py --dataset synthetic
 
-## Notlar
-- Protein-only Frangieh verisinde yalnızca 20 özellik var, bu yüzden `*_top20` metrikleri tüm özelliklere eşit.
-- `skill_vs_PerturbationMean`, hata oranını koşul başına hesaplayıp ortalıyor. Bu nedenle özet tablodaki ortalama MSE sıralamasından farklı çıkabilir: az sayıda büyük etkili perturbation ortalamayı domine ediyor.
+# COVID: download -> inspect -> convert -> LODO baselines
+.venv/Scripts/python scripts/covid/01_download.py
+.venv/Scripts/python scripts/covid/04_run_lodo.py --config scripts/covid/config_full.json --strict
+
+# CellFlow LODO on synthetic data; the sweep takes [cores] [hours] and resumes where it stopped
+.venv-cellflow/Scripts/python scripts/cellflow/01_synthetic_lodo.py --iterations 50000 --lr 5e-4
+bash scripts/cellflow/02_sweep.sh 0 6
+.venv-cellflow/Scripts/python scripts/cellflow/03_aggregate.py
+```
+
+Rule: the held-out donor never enters preprocessing. Feature selection, scaling and PCA are fit on training donors only.

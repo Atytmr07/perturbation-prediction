@@ -1,14 +1,14 @@
-"""Seurat .rds -> assay başına bir h5ad (R gerekmez).
+"""Seurat .rds -> one h5ad per assay (no R needed).
 
     python scripts/covid/03_convert.py data/covid/PBMC_vaccine_CITE.rds --assays RNA ADT
     python scripts/covid/03_convert.py data/covid/PBMC_vaccine_ASAP.rds --assays ATAC ADT:scale.data
 
-Assay adlarını 02_inspect_rds.py çıktısından alın. Katman varsayılan olarak ham sayımlar
-("counts"); bir assay için farklı katman `ASSAY:katman` ile seçilir. ASAP'ta ADT'nin sadece
-`scale.data` katmanı var, ama içinde ölçeklenmiş değer değil **ham sayımlar** duruyor
-(tam sayı; hücre toplamları meta.data'daki nCount_ADT ile birebir aynı). Bu yüzden
-yükleyicide CITE ADT'si gibi CLR ile normalize edilir. Her assay data/covid/<dosya>__<assay>.h5ad olur; hücre metadata'sı
-hepsinde aynıdır. Kullanılan katman adata.uns["seurat_layer"] içine yazılır.
+Take the assay names from the 02_inspect_rds.py output. The default layer is raw counts
+("counts"); another layer is chosen per assay with `ASSAY:layer`. In ASAP the ADT assay only
+has a `scale.data` layer, but it holds **raw counts**, not scaled values (integers; per-cell
+totals equal nCount_ADT in meta.data), so the loader CLR-normalises it like the CITE ADT.
+Each assay becomes data/covid/<file>__<assay>.h5ad with the same cell metadata. The layer
+used is stored in adata.uns["seurat_layer"].
 """
 
 from __future__ import annotations
@@ -46,9 +46,9 @@ def assay_to_adata(robj, assay: str, layer: str):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("rds")
-    ap.add_argument("--assays", nargs="+", required=True, help="ASSAY veya ASSAY:katman")
-    ap.add_argument("--layer", default="counts", help="katmanı belirtilmeyen assay'ler için")
-    ap.add_argument("--no-compress", action="store_true", help="büyük ATAC için daha hızlı yazım")
+    ap.add_argument("--assays", nargs="+", required=True, help="ASSAY or ASSAY:layer")
+    ap.add_argument("--layer", default="counts", help="for assays given without a layer")
+    ap.add_argument("--no-compress", action="store_true", help="faster writing for the large ATAC assay")
     a = ap.parse_args()
 
     robj = py8rds.parse_rds(a.rds)
@@ -57,13 +57,13 @@ def main():
         assay, _, layer = spec.partition(":")
         layer = layer or a.layer
         ad = assay_to_adata(robj, assay, layer)
-        for c in ad.obs.columns:  # h5ad yazımı için kategorik/str temizliği
+        for c in ad.obs.columns:  # object columns -> str, so h5ad can write them
             if ad.obs[c].dtype == object:
                 ad.obs[c] = ad.obs[c].astype(str)
         ad.uns["seurat_layer"] = layer
         out = Path(f"{stem}__{assay}.h5ad")
         ad.write_h5ad(out, compression=None if a.no_compress else "gzip")
-        print(f"{assay} [{layer}]: {ad.shape[0]} hücre x {ad.shape[1]} özellik -> {out}", flush=True)
+        print(f"{assay} [{layer}]: {ad.shape[0]} cells x {ad.shape[1]} features -> {out}", flush=True)
 
 
 if __name__ == "__main__":

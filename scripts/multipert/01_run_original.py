@@ -26,7 +26,7 @@ def main():
     ap.add_argument("--out", default=str(ROOT / "results" / "multipert_original"))
     a = ap.parse_args()
     if not CODE.exists():
-        sys.exit("external/MultiPert yok: git clone https://github.com/MengyuanZhaoo/MultiPert external/MultiPert")
+        sys.exit("external/MultiPert missing: git clone https://github.com/MengyuanZhaoo/MultiPert external/MultiPert")
 
     import torch
     torch.set_num_threads(a.threads)

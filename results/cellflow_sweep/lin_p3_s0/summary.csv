@@ -1,0 +1,16 @@
+modality,model,pearson_delta,mse_top20,direction_acc_top20,mmd,energy
+atac,CellFlow,0.898,0.143,0.991,0.163,1.384
+atac,ContextRidge,0.921,0.125,0.989,,
+atac,NoChange,,1.342,0.0,0.624,6.401
+atac,PCAOracle,0.983,0.007,1.0,,
+atac,PerturbationMean,0.906,0.188,0.988,,
+protein,CellFlow,0.854,0.086,0.771,0.163,1.384
+protein,ContextRidge,0.869,0.091,0.656,,
+protein,NoChange,,0.47,0.0,0.624,6.401
+protein,PCAOracle,0.96,0.018,0.903,,
+protein,PerturbationMean,0.855,0.1,0.689,,
+rna,CellFlow,0.918,0.236,0.995,0.163,1.384
+rna,ContextRidge,0.938,0.207,0.999,,
+rna,NoChange,,2.986,0.0,0.624,6.401
+rna,PCAOracle,0.981,0.024,1.0,,
+rna,PerturbationMean,0.924,0.296,0.994,,

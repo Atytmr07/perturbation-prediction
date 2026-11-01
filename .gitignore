@@ -20,3 +20,21 @@ results/multipert_variant_*/*.pth
 results/multipert_unseen_ko_*/fold_*/*.h5ad
 results/multipert_unseen_ko_*/fold_*/*.pth
 .venv-cellflow/
+
+# team-internal notes and docs (Turkish) stay local
+CLAUDE.md
+PROJE_BAGLAMI.md
+docs/
+research/
+scripts/build_docx.js
+scripts/build_todo_docx.js
+# early pertbench trials
+results/papalexi2021/
+results/frangieh2021_protein/
+results/synthetic/
+# run logs and intermediate files
+*.log
+data/gears_thp1/
+data/go_essential_*.csv
+results/cellflow_smoke/
+results/cellflow_sweep/*/folds/

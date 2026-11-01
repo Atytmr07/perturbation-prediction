@@ -22,7 +22,7 @@ def evaluate_split(model: Model, ct: ConditionTable, split: Split, top_k: int = 
     has_ctrl = np.array([(c, d) in ctrl_ctx for c, d in ct.obs[["cell_type", "donor"]].itertuples(index=False, name=None)])
     test_mask = split.test & has_ctrl
     if (split.test & ~has_ctrl).any():
-        print(f"[pertbench] {split.name}: {int((split.test & ~has_ctrl).sum())} test koşulu kontrolsüz olduğu için atlandı")
+        print(f"[pertbench] {split.name}: {int((split.test & ~has_ctrl).sum())} test conditions skipped (no control group)")
     test = ct.subset(test_mask)
     m = copy.deepcopy(model)
     t0 = time.perf_counter()

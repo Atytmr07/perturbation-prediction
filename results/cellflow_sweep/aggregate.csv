@@ -1,0 +1,13 @@
+setting,description,seeds,modality,pcc_PerturbationMean,pcc_sd_PerturbationMean,wins_PerturbationMean,pcc_ContextRidge,pcc_sd_ContextRidge,wins_ContextRidge,pcc_CellFlow,pcc_sd_CellFlow,wins_CellFlow,mse_ratio_CF_vs_PM,mse_ratio_CF_vs_CR,n_folds
+lin_p30,"linear, 8 donors, 30 perts",1,atac,0.816,,0,0.846,,1,0.811,,7,0.5,0.91,8
+lin_p30,"linear, 8 donors, 30 perts",1,protein,0.848,,0,0.862,,7,0.778,,1,1.0,1.53,8
+lin_p30,"linear, 8 donors, 30 perts",1,rna,0.863,,0,0.89,,3,0.809,,5,0.46,0.88,8
+nl_p30,"nonlinear, 8 donors, 30 perts",3,atac,0.68,0.107,2,0.723,0.088,12,0.697,0.072,10,0.59,1.01,24
+nl_p30,"nonlinear, 8 donors, 30 perts",3,protein,0.714,0.115,2,0.747,0.097,16,0.681,0.079,6,0.97,1.31,24
+nl_p30,"nonlinear, 8 donors, 30 perts",3,rna,0.743,0.099,2,0.789,0.078,13,0.695,0.064,9,0.61,1.11,24
+lin_p3,"linear, 6 donors, 3 perts",3,atac,0.729,0.162,3,0.748,0.16,7,0.739,0.141,8,0.78,1.02,18
+lin_p3,"linear, 6 donors, 3 perts",3,protein,0.707,0.129,1,0.727,0.123,4,0.698,0.135,13,0.77,0.79,18
+lin_p3,"linear, 6 donors, 3 perts",3,rna,0.833,0.08,3,0.848,0.079,7,0.739,0.156,8,1.0,1.04,18
+nl_p3,"nonlinear, 6 donors, 3 perts",3,atac,0.606,0.028,5,0.63,0.023,5,0.662,0.022,8,0.86,1.08,18
+nl_p3,"nonlinear, 6 donors, 3 perts",3,protein,0.561,0.05,4,0.593,0.04,5,0.635,0.053,9,0.95,0.99,18
+nl_p3,"nonlinear, 6 donors, 3 perts",3,rna,0.763,0.014,7,0.785,0.012,4,0.655,0.046,7,1.0,1.16,18

@@ -1,4 +1,4 @@
-"""Okul PC'sinde ortamı doğrula: GPU görünüyor mu, RTX 5070 (sm_120) için doğru PyTorch kurulu mu?
+"""Check the environment: is the GPU visible, is the right PyTorch build installed for an RTX 5070 (sm_120)?
 
     python scripts/covid/00_check_env.py
 """
@@ -13,7 +13,7 @@ for mod in ["numpy", "pandas", "scipy", "anndata", "scanpy", "torch", "py8rds"]:
         m = importlib.import_module(mod)
         print(f"{mod:9s}", getattr(m, "__version__", "ok"))
     except Exception as e:  # noqa: BLE001
-        print(f"{mod:9s} YOK ({e.__class__.__name__})")
+        print(f"{mod:9s} MISSING ({e.__class__.__name__})")
 
 try:
     import torch
@@ -23,11 +23,11 @@ try:
         cap = torch.cuda.get_device_capability(0)
         print("gpu      ", name, "compute capability", cap)
         x = torch.randn(4096, 4096, device="cuda")
-        print("matmul   ", float((x @ x).sum().cpu()) is not None, "(GPU üzerinde çalıştı)")
+        print("matmul   ", float((x @ x).sum().cpu()) is not None, "(ran on GPU)")
         if cap >= (12, 0) and (torch.version.cuda or "0") < "12.8":
-            print("UYARI: RTX 50xx için CUDA 12.8+ ile derlenmiş PyTorch gerekir (cu128).")
+            print("WARNING: RTX 50xx needs PyTorch built with CUDA 12.8+ (cu128).")
 except Exception as e:  # noqa: BLE001
-    print("torch/GPU testi başarısız:", e)
+    print("torch/GPU test failed:", e)
 
 total, used, free = shutil.disk_usage(".")
-print(f"disk     boş {free / 1e9:.0f} GB (COVID verisi için ~20 GB gerekir)")
+print(f"disk     free {free / 1e9:.0f} GB (the COVID data needs ~20 GB)")
